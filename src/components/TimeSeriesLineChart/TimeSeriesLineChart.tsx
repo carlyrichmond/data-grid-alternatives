@@ -1,32 +1,45 @@
-import React, { useRef } from 'react';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
 import Highcharts from 'highcharts';
+import Sunset from 'highcharts/themes/sunset'
 import HighchartsReact from 'highcharts-react-official';
 import './TimeSeriesLineChart.css';
 
-//interface TimeSeriesLineChartProps extends HighchartsReact.Props {}
+Sunset(Highcharts);
 
-const options: Highcharts.Options = {
-  title: {
-      text: 'My React Line Chart'
-  },
-  series: [{
-      type: 'line',
-      data: [1, 2, 3]
-  }]
-};
+interface ChartState {
+  chartOptions: Highcharts.Options
+}
 
-const TimeSeriesLineChart = (props: HighchartsReact.Props) => {
-  const chartComponentRef = useRef<HighchartsReact.RefObject>(null);
+export default class TimeSeriesLineChart extends Component<HighchartsReact.Props, ChartState> {
+  constructor(props: HighchartsReact.Props) {
+    super(props);
+    this.state = {
+      chartOptions: {
+        title: {
+          text: 'My React Line Chart'
+        },
+        series: [{
+          type: 'line',
+          data: [1, 2, 3]
+        }]
+      }
+    };
+  }
 
-  return (
-    <HighchartsReact 
-    className="TimeSeriesLineChart" data-testid="TimeSeriesLineChart"
-      highcharts={Highcharts}
-      options={options}
-      ref={chartComponentRef}
-      {...props}
-    />
-  );
-};
+  render() {
+    const chartOptions: Highcharts.Options = this.state.chartOptions;
 
-export default TimeSeriesLineChart;
+    return (
+      <div>
+        <HighchartsReact
+          highcharts={Highcharts}
+          options={chartOptions}
+        />
+      </div>
+    )
+
+  }
+}
+
+render(<TimeSeriesLineChart />, document.getElementById('root'));
