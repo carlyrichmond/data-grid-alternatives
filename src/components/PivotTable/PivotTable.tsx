@@ -4,7 +4,7 @@ import { AgGridReact, AgGridReactProps} from 'ag-grid-react';
 import { ColDef, ColumnApi, GridApi } from 'ag-grid-community';
 import 'ag-grid-enterprise';
 import 'ag-grid-community/dist/styles/ag-grid.css';
-import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+import 'ag-grid-community/dist/styles/ag-theme-balham-dark.css';
 
 interface PivotTableState {
   columnDefs: ColDef[],
@@ -57,7 +57,7 @@ export default class PivotTable extends Component<AgGridReactProps, PivotTableSt
 
   render() {
     return (
-      <div style={{ width: '100%', height: '80vh' }}>
+      <div style={{ width: '100%', height: '100vh' }}>
         <div
           style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
         >
@@ -66,7 +66,7 @@ export default class PivotTable extends Component<AgGridReactProps, PivotTableSt
               height: '100%',
               width: '100%',
             }}
-            className="ag-theme-alpine"
+            className="ag-theme-balham-dark"
           >
             <AgGridReact
               columnDefs={this.state.columnDefs}

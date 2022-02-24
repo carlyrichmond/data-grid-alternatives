@@ -1,6 +1,28 @@
-# Getting Started with Create React App
+# Oh No! Not Another Data Grid! Examples
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the accompanying examples for the talk *Oh No! Not Another Data Grid*. This talk has been presented in several forms at the following forums:
+
+1. LJC Lightning Talks
+
+For any questions feel free to contact the author [via the handles listed on her GitHub profile](https://github.com/carlyrichmond).
+
+## Frameworks and Tools
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It makes use of React class components.
+
+At time of writing this repository contains the following examples:
+
+1. Time Series Line Chart: a simple line chart utilising [Highcharts](https://www.highcharts.com/)
+2. Pivot Table: a simple implementation of [AG Grid](https://www.ag-grid.com/), making use of their [pivot capabilities](https://www.ag-grid.com/react-data-grid/pivoting/). Note that pivoting is an enterprise feature, which requires a licence. The control is used in evaluation mode using some of AG Grid's own sample medal data.
+
+## Getting Started
+
+Once cloned, the project can be built locally using the following commands:
+
+```
+npm install
+npm run start
+```
 
 ## Available Scripts
 
