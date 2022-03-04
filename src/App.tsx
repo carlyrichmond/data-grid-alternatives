@@ -11,7 +11,8 @@ import TimeSeriesLineChart from './components/TimeSeriesLineChart/TimeSeriesLine
 function App() {
   return (
     <div className="App">
-      <PivotTable/>
+     <TimeSeriesLineChart/>
+     { /* <PivotTable/> */}
     </div>
   );
 }
