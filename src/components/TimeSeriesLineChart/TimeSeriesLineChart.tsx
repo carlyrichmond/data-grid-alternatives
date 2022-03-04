@@ -22,7 +22,14 @@ export default class TimeSeriesLineChart extends Component<HighchartsReact.Props
       chartOptions: {
         chart: {
           zoomType: 'x',
-          backgroundColor: '#340979'
+          backgroundColor:{
+            linearGradient:{
+              x1:0,
+              y1:0,
+              x2:0,
+              y2:1
+            },
+            stops:[[0,"#1f1836"],[1,"#45445d"]]}
         },
         title: {
           text: 'ACME @ NYSE'
@@ -51,8 +58,8 @@ export default class TimeSeriesLineChart extends Component<HighchartsReact.Props
                       y2: 1
                   },
                   stops: [
-                      [0, '#a9a5bf'],
-                      [1, '#340979']
+                      [0, '#8087E8'],
+                      [1, '(128,135,232,0)']
                   ]
               },
               marker: {
