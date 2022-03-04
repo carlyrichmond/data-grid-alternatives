@@ -40,8 +40,16 @@ export default class TimeSeriesLineChart extends Component<HighchartsReact.Props
         legend: {
           enabled: false
         },
+        tooltip: {
+          borderWidth: 0,
+          backgroundColor: "#8087E8",
+          shadow: !0
+        },
         xAxis: {
-          type: 'datetime'
+          type: 'datetime',
+          labels: {
+            format: '{value:%e %b %Y}'
+          }          
         },
         yAxis: {
           title: {
@@ -63,12 +71,12 @@ export default class TimeSeriesLineChart extends Component<HighchartsReact.Props
                   ]
               },
               marker: {
-                  radius: 2
+                  radius: 3
               },
-              lineWidth: 1,
+              lineWidth: 2,
               states: {
                   hover: {
-                      lineWidth: 1
+                      lineWidth: 2
                   }
               },
               threshold: null
@@ -94,7 +102,7 @@ export default class TimeSeriesLineChart extends Component<HighchartsReact.Props
     const endDateInMilliseconds: number = endDate.getTime();
 
     while (currentDateInMilliseconds <= endDateInMilliseconds) {
-      const currentPosition: number = Math.random() * (180 - 165) + 165;
+      const currentPosition: number = +(Math.random() * (180 - 165) + 165).toFixed(2);
       data.push([currentDateInMilliseconds, currentPosition]);
       currentDateInMilliseconds += MILLISECONDS_IN_DAY;
     }
