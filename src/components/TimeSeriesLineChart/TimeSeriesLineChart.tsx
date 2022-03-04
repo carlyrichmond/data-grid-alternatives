@@ -30,6 +30,9 @@ export default class TimeSeriesLineChart extends Component<HighchartsReact.Props
         subtitle: {
           text: 'ACME Corporation'
         },
+        legend: {
+          enabled: false
+        },
         xAxis: {
           type: 'datetime'
         },
@@ -69,6 +72,7 @@ export default class TimeSeriesLineChart extends Component<HighchartsReact.Props
           marker: {
             enabled: false
           },
+          name: 'Daily Close ($)',
           data: this.getTimeSeriesData(seriesStartDate, seriesEndDate)
         }]
       }
