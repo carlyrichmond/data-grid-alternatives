@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import PivotTable from './components/PivotTable/PivotTable.lazy';
+import ProductBarChart from './components/ProductBarChart/ProductBarChart.lazy';
 import TimeSeriesLineChart from './components/TimeSeriesLineChart/TimeSeriesLineChart';
 
 /**
@@ -10,9 +11,10 @@ import TimeSeriesLineChart from './components/TimeSeriesLineChart/TimeSeriesLine
  */
 function App() {
   return (
-    <div className="App">
-     <TimeSeriesLineChart/>
-     { /* <PivotTable/> */}
+    <div id="app" className="App">
+      <ProductBarChart/>
+      <TimeSeriesLineChart/>
+     { /* <PivotTable/> */ }
     </div>
   );
 }
