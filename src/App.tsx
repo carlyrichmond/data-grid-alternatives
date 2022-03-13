@@ -13,7 +13,7 @@ function App() {
   return (
     <div id="app" className="App">
       <ProductBarChart/>
-      <TimeSeriesLineChart/>
+     { /* <TimeSeriesLineChart/> */ }
      { /* <PivotTable/> */ }
     </div>
   );

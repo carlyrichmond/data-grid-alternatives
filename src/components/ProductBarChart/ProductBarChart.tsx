@@ -1,71 +1,68 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+import './ProductBarChart.css';
 import { render } from 'react-dom';
-import { Bar } from 'react-chartjs-2';
-import { BarElement, Chart, CategoryScale, ChartData, ChartOptions, Legend, LinearScale, Title, Tooltip } from 'chart.js';
+import { BarChart, CartesianGrid, Legend, Tooltip, XAxis, YAxis, Bar, ResponsiveContainer } from 'recharts';
 
-interface ChartJSState {
-  options: ChartOptions;
-  data: ChartData<'bar'>;
+interface DataPoint {
+  name: string;
+  anvilCount: number;
+  giantRubberBandCount: number; 
+  superGiantRubberBandCount: number;
 }
 
-Chart.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+interface BarChartState {
+  data: DataPoint[];
+}
 
-export default class ProductBarChart extends Component<any, ChartJSState> {
+export default class ProductBarChart extends PureComponent<any, BarChartState> {
   
   constructor(props: any) {
     super(props);
 
-    const categories: string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
     this.state = {
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            position: 'top' as const,
-          },
-          title: {
-            display: true,
-            text: 'W. E. Coyote Product Purchase History',
-          },
-          subtitle: {
-            display: true,
-            text: 'Jan-Jul 2021'
-          }
-        },
-      },
-      data: {
-        labels: categories,
-        datasets: [
-          {
-            label: 'Dataset 1',
-            data: categories.map(() => +(Math.random() * (15 - 1) + 1).toFixed(1)),
-            backgroundColor: 'rgba(255, 99, 132, 0.5)',
-          },
-          {
-            label: 'Dataset 2',
-            data: categories.map(() => +(Math.random() * (25 - 4) + 4).toFixed(1)),
-            backgroundColor: 'rgba(53, 162, 235, 0.5)',
-          },
-        ],
-      }
+      data: this.generateProductData()
     };
   }
 
+  private generateProductData(): DataPoint[] {
+    const categories: string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+    return categories.map((category: string) => {
+       return {
+        name: category,
+        anvilCount: +(Math.random() * (15 - 1) + 1).toFixed(1),
+        giantRubberBandCount: +(Math.random() * (5 - 1) + 1).toFixed(1), 
+        superGiantRubberBandCount: +(Math.random() * (8 - 1) + 1).toFixed(1)
+      };
+    });
+  }
+
   render() {
-    const chartOptions = this.state.options;
     const data = this.state.data;
 
     return (
-      <div>
-        <Bar options={chartOptions} data={data} />
+      <div className="product-chart-container">
+        <h4>W.E. Coyote Product Purchase History</h4>
+        <h5>Net Count, January-July 2021</h5>
+          <BarChart
+            width={1400}
+            height={600}
+            data={data}
+            margin={{
+              top: 20,
+              right: 30,
+              left: 30,
+              bottom: 5,
+            }}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" tick={{ fill: '#e5e5e5' }}/>
+            <YAxis tick={{ fill: '#e5e5e5' }}/>
+            <Tooltip wrapperStyle={{ backgroundColor: '#8087E8' }}/>
+            <Legend/>
+            <Bar name="Super Giant Rubber Band" dataKey="superGiantRubberBandCount" stackId="a" fill="#cdc225" />
+            <Bar name="Giant Rubber Band" dataKey="giantRubberBandCount" stackId="a" fill="#8087E8" />
+            <Bar name="Anvil" dataKey="anvilCount" fill="#7798BF" />
+        </BarChart>
       </div>
     )
   }

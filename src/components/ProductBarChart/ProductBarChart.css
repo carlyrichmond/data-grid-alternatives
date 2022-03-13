@@ -1,1 +1,17 @@
-.BarChart {}
+.product-chart-container {
+    background: rgb(31,24,54);
+    background: linear-gradient(90deg, rgba(31,24,54,1) 0%, rgba(69,68,93,1) 70%);
+}
+
+h4, h5 {
+    text-align: center;
+}
+
+h4 {
+    font-size: 18;
+    color: #ffffff;
+}
+
+h5 {
+    color: #e5e5e5
+}
