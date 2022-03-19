@@ -42,8 +42,8 @@ export default class ProductBarChart extends PureComponent<any, BarChartState> {
 
     return (
       <div className="product-chart-container">
-        <h4>W.E. Coyote Product Purchase History</h4>
-        <h5>Net Count, January-July 2021</h5>
+        <h2>W.E. Coyote Product Purchase History</h2>
+        <h3>Net Count, January-July 2021</h3>
           <BarChart
             width={1400}
             height={600}
@@ -57,11 +57,11 @@ export default class ProductBarChart extends PureComponent<any, BarChartState> {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" tick={{ fill: '#e5e5e5' }}/>
             <YAxis tick={{ fill: '#e5e5e5' }}/>
-            <Tooltip contentStyle={{ backgroundColor: '#8087E8' }}/>
-            <Legend/>
-            <Bar name="Super Giant Rubber Band" dataKey="superGiantRubberBandCount" stackId="a" fill="#cdc225" />
-            <Bar name="Giant Rubber Band" dataKey="giantRubberBandCount" stackId="a" fill="#8087E8" />
-            <Bar name="Anvil" dataKey="anvilCount" fill="#7798BF" />
+            <Tooltip contentStyle={{ backgroundColor: '#e5e5e5' }}/>
+            <Legend verticalAlign='top'/>
+            <Bar name="Super Giant Rubber Band" dataKey="superGiantRubberBandCount" stackId="a" fill="#FF3CAC"/>
+            <Bar name="Giant Rubber Band" dataKey="giantRubberBandCount" stackId="a" fill="#3cacff" />
+            <Bar name="Anvil" dataKey="anvilCount" fill="#3cfff1"/>
         </BarChart>
       </div>
     )
