@@ -57,7 +57,7 @@ export default class ProductBarChart extends PureComponent<any, BarChartState> {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" tick={{ fill: '#e5e5e5' }}/>
             <YAxis tick={{ fill: '#e5e5e5' }}/>
-            <Tooltip wrapperStyle={{ backgroundColor: '#8087E8' }}/>
+            <Tooltip contentStyle={{ backgroundColor: '#8087E8' }}/>
             <Legend/>
             <Bar name="Super Giant Rubber Band" dataKey="superGiantRubberBandCount" stackId="a" fill="#cdc225" />
             <Bar name="Giant Rubber Band" dataKey="giantRubberBandCount" stackId="a" fill="#8087E8" />
@@ -68,4 +68,4 @@ export default class ProductBarChart extends PureComponent<any, BarChartState> {
   }
 }
 
-render(<ProductBarChart/>, document.getElementById('root'));
+//render(<ProductBarChart/>, document.getElementById('root'));

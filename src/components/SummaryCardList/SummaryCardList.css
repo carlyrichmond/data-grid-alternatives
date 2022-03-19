@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+h2 {
+    color: #e5e5e5;
+    font-family: Open Sans;
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    color: #999999;
+    font-family: Open Sans;
+    margin: 0;
+}
+
+.summary-cards-container {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+
+    background-color: #7798BF;
+    background-image: linear-gradient(225deg, #141414 0%, #784BA0 50%, #2B86C5 100%);
+}
