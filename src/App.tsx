@@ -15,8 +15,8 @@ function App() {
   return (
     <div id="app" className="App">
      {/*} <SummaryCardList/> */}
-      <ProductBarChart/> 
-     { /* <TimeSeriesLineChart/> */ }
+     { /* <ProductBarChart/> */} 
+      <TimeSeriesLineChart/>
      { /* <PivotTable/> */ }
     </div>
   );

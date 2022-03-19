@@ -29,7 +29,7 @@ export default class TimeSeriesLineChart extends Component<HighchartsReact.Props
               x2:0,
               y2:1
             },
-            stops:[[0,"#1f1836"],[1,"#45445d"]]}
+            stops:[[0,"#1f1836"],[1,"#784BA0"]]}
         },
         title: {
           text: 'ACME @ NYSE'
@@ -42,7 +42,7 @@ export default class TimeSeriesLineChart extends Component<HighchartsReact.Props
         },
         tooltip: {
           borderWidth: 0,
-          backgroundColor: "#8087E8",
+          backgroundColor: "#784BA0",
           shadow: !0
         },
         xAxis: {
@@ -66,8 +66,8 @@ export default class TimeSeriesLineChart extends Component<HighchartsReact.Props
                       y2: 1
                   },
                   stops: [
-                      [0, '#8087E8'],
-                      [1, '(128,135,232,0)']
+                      [0, '#3cacff'],
+                      [1, '(119,152,191,0.25)']
                   ]
               },
               marker: {
@@ -84,6 +84,8 @@ export default class TimeSeriesLineChart extends Component<HighchartsReact.Props
       },
         series: [{
           type: 'area',
+          color: '#3cfff1',
+          lineWidth: 1,
           marker: {
             enabled: false
           },
