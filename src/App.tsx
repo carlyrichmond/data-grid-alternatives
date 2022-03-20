@@ -2,8 +2,7 @@ import React from 'react';
 import './App.css';
 import PivotTable from './components/PivotTable/PivotTable.lazy';
 import ProductBarChart from './components/ProductBarChart/ProductBarChart.lazy';
-import SummaryCard from './components/SummaryCard/SummaryCard.lazy';
-import SummaryCardList from './components/SummaryCardList/SummaryCardList.lazy';
+import SummaryCardList from './components/summary/SummaryCardList/SummaryCardList.lazy';
 import TimeSeriesLineChart from './components/TimeSeriesLineChart/TimeSeriesLineChart';
 
 /**

@@ -6,7 +6,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { createTheme, Theme, ThemeProvider } from '@mui/material/styles';
-import { CustomerSummary } from '../../models/CustomerModel';
+import { CustomerSummary } from '../../../models/CustomerModel';
 import SummaryCardChart from '../SummaryCardChart/SummaryCardChart.lazy';
 
 interface SummaryCardProps {

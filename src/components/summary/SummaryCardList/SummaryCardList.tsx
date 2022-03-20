@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import './SummaryCardList.css';
 import { render } from 'react-dom';
-import { CustomerSummaries, CustomerSummary } from '../../models/CustomerModel';
+import { CustomerSummaries, CustomerSummary } from '../../../models/CustomerModel';
 import SummaryCard from '../SummaryCard/SummaryCard';
 
 export default class SummaryCardList extends PureComponent<any, CustomerSummaries> {

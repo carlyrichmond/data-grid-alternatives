@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import SummaryCard from './SummaryCard';
-import { CustomerSummary } from '../../models/CustomerModel';
+import { CustomerSummary } from '../../../models/CustomerModel';
 
 describe('<SummaryCard />', () => {
   test('it should mount', () => {
