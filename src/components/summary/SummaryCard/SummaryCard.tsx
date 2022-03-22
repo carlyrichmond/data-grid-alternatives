@@ -5,8 +5,9 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { createTheme, Theme, ThemeProvider } from '@mui/material/styles';
+import { Theme, ThemeProvider } from '@mui/material/styles';
 import { CustomerSummary } from '../../../models/CustomerModel';
+import { initializeDarkTheme } from '../../../theme/MUIThemeInitialisation';
 import SummaryCardChart from '../SummaryCardChart/SummaryCardChart.lazy';
 
 interface SummaryCardProps {
@@ -17,18 +18,6 @@ export default class SummaryCard extends React.Component<SummaryCardProps, any> 
   
   constructor(props: SummaryCardProps) {
     super(props);
-  }
-
-  private initializeDarkTheme(): Theme {
-    return createTheme({
-      palette: {
-        mode: 'dark',
-        text: {
-          primary: '#784BA0',
-          secondary: '#2B86C5'
-        }
-      },
-    });
   }
 
   private addCommas(num: number): string {
@@ -45,7 +34,12 @@ export default class SummaryCard extends React.Component<SummaryCardProps, any> 
 
   render() 
   {
-    const darkModeTheme: Theme = this.initializeDarkTheme();
+    let darkModeTheme: Theme = initializeDarkTheme();
+    darkModeTheme.palette.text = {
+      primary: '#784BA0',
+      secondary: '#2B86C5',
+      disabled: '#e5e5e5'
+    };
 
     return (
       <ThemeProvider theme={darkModeTheme}>

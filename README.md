@@ -12,7 +12,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 At time of writing this repository contains the following examples:
 
-1. Sample data grid with toolbar: TODO
+1. Sample data grid with toolbar: IN PROGRESS
 2. Time Series Line Chart: a simple line chart utilising [Highcharts](https://www.highcharts.com/)
 3. Product Bar Chart: a bar chart showing single category and stackable configurations using [Recharts](https://recharts.org/).
 4. Summary Cards: a simple card showcasing the ability to combine visualisations with summary statistics. The line chart utilises [Recharts](https://recharts.org/). While cards can be implemented using basic CSS and HTML, in this case I've chosen to highlight the component library [MUI](https://mui.com/) to promote reusable component libraries.

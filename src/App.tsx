@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import PivotTable from './components/PivotTable/PivotTable.lazy';
 import ProductBarChart from './components/ProductBarChart/ProductBarChart.lazy';
+import SameOldDataGrid from './components/SameOldDataGrid/SameOldDataGrid.lazy';
 import SummaryCardList from './components/summary/SummaryCardList/SummaryCardList.lazy';
 import TimeSeriesLineChart from './components/TimeSeriesLineChart/TimeSeriesLineChart';
 
@@ -13,9 +14,10 @@ import TimeSeriesLineChart from './components/TimeSeriesLineChart/TimeSeriesLine
 function App() {
   return (
     <div id="app" className="App">
-     {/*} <SummaryCardList/> */}
+      <SameOldDataGrid/>
+     {/* <SummaryCardList/> */}
      { /* <ProductBarChart/> */} 
-      <TimeSeriesLineChart/>
+      {/* <TimeSeriesLineChart/> */}
      { /* <PivotTable/> */ }
     </div>
   );

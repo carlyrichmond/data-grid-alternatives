@@ -1,0 +1,22 @@
+body {
+    background-color: #7798BF;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+}
+
+h2 {
+    text-align: center;
+    color: #e5e5e5;
+}
+
+.filters-toolbar {
+    background-color: #262c2e;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+}
+
+#auto-complete {
+    width: 20%;
+    height: 80%;
+}

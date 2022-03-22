@@ -7,3 +7,15 @@ export interface CustomerSummary {
 export interface CustomerSummaries {
     customers: CustomerSummary[];
 }
+
+export type ProductType = 'Anvil' | 'Super Giant Rubber Band' | 'Giant Rubber Band' | 'Gift Card';
+
+export type OrderStatus = 'Pending' | 'Confirmed' | 'Shipped' | 'Delivered';
+
+export interface CustomerPurchase {
+    customerName: string;
+    date: Date;
+    orderId: string;
+    product: ProductType;
+    orderStatus: OrderStatus;
+}
