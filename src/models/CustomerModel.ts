@@ -1,3 +1,5 @@
+import { faCartFlatbed, faGift, faHouseCircleCheck, faTruckFast, faTruckRampBox, faWandMagic, faWandMagicSparkles, faWeightHanging, IconDefinition } from '@fortawesome/free-solid-svg-icons'
+
 export interface CustomerSummary {
     name: string;
     net_purchases_gbp: number;
@@ -10,7 +12,25 @@ export interface CustomerSummaries {
 
 export type ProductType = 'Anvil' | 'Super Giant Rubber Band' | 'Giant Rubber Band' | 'Gift Card';
 
-export type OrderStatus = 'Pending' | 'Confirmed' | 'Shipped' | 'Delivered';
+type IconMapping<T extends string> = {
+    [key in T]: IconDefinition;
+};
+
+export const productIconMapping: IconMapping<ProductType> = {
+    'Anvil': faWeightHanging, 
+    'Super Giant Rubber Band': faWandMagicSparkles,
+    'Giant Rubber Band': faWandMagic,
+    'Gift Card': faGift
+};
+
+export type OrderStatus = 'Pending' | 'Awaiting Dispatch' | 'Shipped' | 'Delivered';
+
+export const orderStatusMapping: IconMapping<OrderStatus> = {
+    'Pending': faCartFlatbed, 
+    'Awaiting Dispatch': faTruckRampBox,
+    'Shipped': faTruckFast,
+    'Delivered': faHouseCircleCheck
+};
 
 export interface CustomerPurchase {
     customerName: string;
@@ -18,4 +38,5 @@ export interface CustomerPurchase {
     orderId: string;
     product: ProductType;
     orderStatus: OrderStatus;
+    price: number;
 }

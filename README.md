@@ -12,14 +12,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 At time of writing this repository contains the following examples:
 
-1. Sample data grid with toolbar: IN PROGRESS
+1. Sample data grid with toolbar: a typical example of grid-based dashboards from my time working in banking. [AG Grid](https://www.ag-grid.com/) is the focus point control, and in this example we make use of custom formatters and cell renderers to make use of advanced capabilities. [MUI](https://mui.com/) Autocomplete and Select controls, both supporting multi-select, are also presented.
 2. Time Series Line Chart: a simple line chart utilising [Highcharts](https://www.highcharts.com/)
 3. Product Bar Chart: a bar chart showing single category and stackable configurations using [Recharts](https://recharts.org/).
 4. Summary Cards: a simple card showcasing the ability to combine visualisations with summary statistics. The line chart utilises [Recharts](https://recharts.org/). While cards can be implemented using basic CSS and HTML, in this case I've chosen to highlight the component library [MUI](https://mui.com/) to promote reusable component libraries.
 5. Grouping Data Grid: TODO
 6. Tree/ Bubble Chart: TODO
 7. Sankey/ Chord Diagram: TODO
-8. Pivot Table: a simple implementation of [AG Grid](https://www.ag-grid.com/), making use of their [pivot capabilities](https://www.ag-grid.com/react-data-grid/pivoting/). Pivot controls are useful for open exploration over existing data sets. Note that pivoting is an enterprise feature, which requires a licence. The control is used in evaluation mode using some of AG Grid's own sample medal data.
+8. Pivot Table: a simple implementation of [AG Grid](https://www.ag-grid.com/), making use of their [pivot capabilities](https://www.ag-grid.com/react-data-grid/pivoting/). Pivot controls are useful for open exploration over existing data sets. Note that pivoting is an enterprise feature, which requires a licence. The control is used in evaluation mode using some of AG Grid's own sample medal data. 
 9. Chart With Data Grid Drilldown: TODO
 
 ## Getting Started

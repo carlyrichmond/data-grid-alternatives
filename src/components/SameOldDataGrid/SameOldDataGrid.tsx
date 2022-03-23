@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { AgGridReact, AgGridReactProps} from 'ag-grid-react';
-import { ColDef, ColumnApi, GridApi } from 'ag-grid-community';
+import { ColDef, ColumnApi, GridApi, ICellRendererParams } from 'ag-grid-community';
 import 'ag-grid-enterprise';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham-dark.css';
 import './SameOldDataGrid.css';
 import { Autocomplete, FormControl, InputLabel, MenuItem, OutlinedInput, Select, SelectChangeEvent, TextField, Theme, ThemeProvider } from '@mui/material';
 import { initializeDarkTheme } from '../../theme/MUIThemeInitialisation';
+import { CUSTOMERS, generateCustomerPurchaseHistory, PRODUCTS } from '../../models/CustomerDataGenerator';
+import { CustomerPurchase, OrderStatus, orderStatusMapping, productIconMapping, ProductType } from '../../models/CustomerModel';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArchway } from '@fortawesome/free-solid-svg-icons';
 
 interface SameOldDataGridState {
   gridSettings: {
     columnDefs: ColDef[],
     defaultColDef: ColDef,
-    rowData: any[] | null
+    rowData: CustomerPurchase[] | null
   },
   selectedFilters: {
     selectedProducts: string[],
@@ -25,7 +29,7 @@ export default class SameOldDataGrid extends Component<AgGridReactProps, SameOld
   private gridApi: GridApi | null = null;
   private gridColumnApi: ColumnApi | null = null;
   private customerAutocompleteSettings = {
-    options: ['W.E. Coyote', 'R. Runner', 'P. Le Pew', 'B. Bunny', 'D. Duck', 'M. Martian'],
+    options: CUSTOMERS,
   };
 
   private readonly ITEM_HEIGHT = 48;
@@ -39,28 +43,26 @@ export default class SameOldDataGrid extends Component<AgGridReactProps, SameOld
     },
   };
 
-  private products: string[] = ['Anvil', 'Super Giant Rubber Band', 'Giant Rubber Band', 'Gift Card'];
-
   constructor(props: AgGridReactProps | Readonly<AgGridReactProps>) {
     super(props);
 
     this.state = {
-      // TODO change settings and data to match product domain
       gridSettings: {
         columnDefs: [
-        { field: 'country' },
-        { field: 'athlete' },
-        { field: 'sport' },
-        { field: 'year' },
-        { field: 'gold' },
-        { field: 'silver' },
-        { field: 'bronze' },
+        { field: 'customerName', headerName: "Customer Name" },
+        { field: 'date', headerName: "Placement Date", sort: 'desc', filter: 'date', valueFormatter: this.dateFormatter },
+        { field: 'orderId', headerName: "Order ID" },
+        { field: 'product', headerName: "Product", cellRenderer: this.productFormatter },
+        { field: 'orderStatus', headerName: "Status", cellRenderer: this.shipmentStatusFormatter },
+        { field: 'price', headerName: "Purchase Price (£)", filter: 'number' }
       ],
       defaultColDef: {
         flex: 1,
         minWidth: 150,
         sortable: true,
         resizable: true,
+        filter: true,
+        floatingFilter: true
       },
       rowData: null
     },
@@ -71,16 +73,33 @@ export default class SameOldDataGrid extends Component<AgGridReactProps, SameOld
     };
   }
 
+  private dateFormatter(params: { data: { date: Date; }; }) {
+    const orderDate = params.data.date;
+    const options: Intl.DateTimeFormatOptions = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
+
+    return orderDate.toLocaleDateString('en-GB', options);
+  }
+
+  private shipmentStatusFormatter(params: ICellRendererParams) {
+    const status: OrderStatus = params.data.orderStatus as OrderStatus;
+    const icon = orderStatusMapping[status];
+    return <span><FontAwesomeIcon className="product-icon" icon={icon}/>{status}</span>
+  }
+
+  private productFormatter(params: ICellRendererParams) {
+    const product: ProductType = params.data.product as ProductType;
+    const icon = productIconMapping[product];
+    return <span><FontAwesomeIcon className="product-icon" icon={icon}/>{product}</span>
+  }
+
   onGridReady = (params: { api: GridApi | null; columnApi: ColumnApi | null; }) => {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
 
-    const updateData = (data: any[]) => params.api?.setRowData(data);
+    const customerData = generateCustomerPurchaseHistory(100);
 
-    fetch('https://www.ag-grid.com/example-assets/olympic-winners.json')
-      .then((resp) => resp.json())
-      .then((data) => updateData(data));
-  };
+    params.api?.setRowData(customerData);
+  }
 
   private handleProductMultiselectChange(event: SelectChangeEvent<typeof this.state.selectedFilters.selectedProducts>) {
     const {
@@ -97,13 +116,19 @@ export default class SameOldDataGrid extends Component<AgGridReactProps, SameOld
     const dropdownDarkModeTheme: Theme = initializeDarkTheme();
 
     return (
+      <ThemeProvider theme={dropdownDarkModeTheme}>
       <div className="customer-dashboard-container" style={{ width: '100%', height: '100vh' }}>
-        <h2>ACME Customer Purchase Dashboard</h2>
+        
+        <div className="app-header">
+          <h1>ACME <FontAwesomeIcon className="acme-icon" icon={faArchway}/></h1>
+          <h2>Sales Portal</h2>
+        </div>
+        
         <div
           style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>
             
             <div className="filters-toolbar">
-            <ThemeProvider theme={dropdownDarkModeTheme}>
+            
               <Autocomplete sx={{ m: 1, width: 400 }}
               {...this.customerAutocompleteSettings}
               id="auto-complete"
@@ -113,8 +138,8 @@ export default class SameOldDataGrid extends Component<AgGridReactProps, SameOld
               renderInput={(params) => (
               <TextField {...params} label="Customers" variant="standard" />)}/>
               
-              <FormControl sx={{ m: 1, width: 300 }}>
-                <InputLabel id="product-multiselect-label">Name</InputLabel>
+              <FormControl sx={{ m: 1, width: 300 }} className="toolbar-component">
+                <InputLabel id="product-multiselect-label">Products</InputLabel>
                 <Select
                   labelId="product-multiselect-label"
                   id="product-multiselect"
@@ -123,7 +148,7 @@ export default class SameOldDataGrid extends Component<AgGridReactProps, SameOld
                   onChange={this.handleProductMultiselectChange}
                   input={<OutlinedInput label="Products" />}
                   MenuProps={this.MenuProps}>
-                  {this.products.map((product) => (
+                  {PRODUCTS.map((product) => (
                     <MenuItem
                       key={product}
                       value={product}>
@@ -132,12 +157,11 @@ export default class SameOldDataGrid extends Component<AgGridReactProps, SameOld
                   ))}
                 </Select>
               </FormControl>
-        </ThemeProvider>
         </div>
           
           <div
             style={{
-              height: '90%',
+              height: '80%',
               width: '90%',
             }}
             className="ag-theme-balham-dark">
@@ -146,10 +170,13 @@ export default class SameOldDataGrid extends Component<AgGridReactProps, SameOld
               defaultColDef={this.state.gridSettings.defaultColDef}
               onGridReady={this.onGridReady}
               rowData={this.state.gridSettings.rowData}
+              paginationAutoPageSize={true}
+              pagination={true}
             />
-          </div>
+          </div>            
         </div>
       </div>
+      </ThemeProvider>
     );
   }
 }
