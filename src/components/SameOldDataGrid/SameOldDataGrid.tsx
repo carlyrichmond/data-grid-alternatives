@@ -9,9 +9,9 @@ import './SameOldDataGrid.css';
 import { Autocomplete, FormControl, InputLabel, MenuItem, OutlinedInput, Select, SelectChangeEvent, TextField, Theme, ThemeProvider } from '@mui/material';
 import { initializeDarkTheme } from '../../theme/MUIThemeInitialisation';
 import { CUSTOMERS, generateCustomerPurchaseHistory, PRODUCTS } from '../../models/CustomerDataGenerator';
-import { CustomerPurchase, OrderStatus, orderStatusMapping, productIconMapping, ProductType } from '../../models/CustomerModel';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArchway } from '@fortawesome/free-solid-svg-icons';
+import { CustomerPurchase } from '../../models/CustomerModel';
+import { dateFormatter, productFormatter, shipmentStatusFormatter } from '../../utils/GridUtils';
+import DashboardHeader from '../DashboardHeader/DashboardHeader';
 
 interface SameOldDataGridState {
   gridSettings: {
@@ -50,10 +50,10 @@ export default class SameOldDataGrid extends Component<AgGridReactProps, SameOld
       gridSettings: {
         columnDefs: [
         { field: 'customerName', headerName: "Customer Name" },
-        { field: 'date', headerName: "Placement Date", sort: 'desc', filter: 'date', valueFormatter: this.dateFormatter },
+        { field: 'date', headerName: "Placement Date", sort: 'desc', filter: 'date', valueFormatter: dateFormatter },
         { field: 'orderId', headerName: "Order ID" },
-        { field: 'product', headerName: "Product", cellRenderer: this.productFormatter },
-        { field: 'orderStatus', headerName: "Status", cellRenderer: this.shipmentStatusFormatter },
+        { field: 'product', headerName: "Product", cellRenderer: productFormatter },
+        { field: 'orderStatus', headerName: "Status", cellRenderer: shipmentStatusFormatter },
         { field: 'price', headerName: "Purchase Price (£)", filter: 'number' }
       ],
       defaultColDef: {
@@ -73,32 +73,12 @@ export default class SameOldDataGrid extends Component<AgGridReactProps, SameOld
     };
   }
 
-  private dateFormatter(params: { data: { date: Date; }; }) {
-    const orderDate = params.data.date;
-    const options: Intl.DateTimeFormatOptions = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
-
-    return orderDate.toLocaleDateString('en-GB', options);
-  }
-
-  private shipmentStatusFormatter(params: ICellRendererParams) {
-    const status: OrderStatus = params.data.orderStatus as OrderStatus;
-    const icon = orderStatusMapping[status];
-    return <span><FontAwesomeIcon className="product-icon" icon={icon}/>{status}</span>
-  }
-
-  private productFormatter(params: ICellRendererParams) {
-    const product: ProductType = params.data.product as ProductType;
-    const icon = productIconMapping[product];
-    return <span><FontAwesomeIcon className="product-icon" icon={icon}/>{product}</span>
-  }
-
-  onGridReady = (params: { api: GridApi | null; columnApi: ColumnApi | null; }) => {
+  onGridReady (params: { api: GridApi | null; columnApi: ColumnApi | null; }) {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
 
     const customerData = generateCustomerPurchaseHistory(100);
-
-    params.api?.setRowData(customerData);
+    this.gridApi?.setRowData(customerData);
   }
 
   private handleProductMultiselectChange(event: SelectChangeEvent<typeof this.state.selectedFilters.selectedProducts>) {
@@ -119,10 +99,7 @@ export default class SameOldDataGrid extends Component<AgGridReactProps, SameOld
       <ThemeProvider theme={dropdownDarkModeTheme}>
       <div className="customer-dashboard-container" style={{ width: '100%', height: '100vh' }}>
         
-        <div className="app-header">
-          <h1>ACME <FontAwesomeIcon className="acme-icon" icon={faArchway}/></h1>
-          <h2>Sales Portal</h2>
-        </div>
+        <DashboardHeader viewTitle="Sales Portal"/>
         
         <div
           style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>

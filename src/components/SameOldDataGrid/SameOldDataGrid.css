@@ -3,30 +3,6 @@ body {
     overflow-y: hidden;
 }
 
-.app-header {
-    background-color: #7798BF;
-    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
-    
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-h1 {
-    color: #ffffff;
-    text-transform: uppercase;
-    text-align: left;
-    position: absolute;
-    left: 2rem;
-}
-
-h2 {
-    text-align: center;
-    color: #e5e5e5;
-}
-
 .filters-toolbar {
     background-color: #32393c;
     display: flex;

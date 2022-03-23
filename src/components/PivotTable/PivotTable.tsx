@@ -5,6 +5,9 @@ import { ColDef, ColumnApi, GridApi } from 'ag-grid-community';
 import 'ag-grid-enterprise';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham-dark.css';
+import { dateFormatter, productFormatter, shipmentStatusFormatter } from '../../utils/GridUtils';
+import { generateCustomerPurchaseHistory } from '../../models/CustomerDataGenerator';
+import DashboardHeader from '../DashboardHeader/DashboardHeader';
 
 interface PivotTableState {
   columnDefs: ColDef[],
@@ -23,13 +26,12 @@ export default class PivotTable extends Component<AgGridReactProps, PivotTableSt
 
     this.state = {
       columnDefs: [
-        { field: 'country', rowGroup: true, enableRowGroup: true },
-        { field: 'athlete', aggFunc: 'count', enablePivot: true },
-        { field: 'sport', pivot: true, enablePivot: true },
-        { field: 'year', enablePivot: true },
-        { field: 'gold' },
-        { field: 'silver' },
-        { field: 'bronze' },
+        { field: 'customerName', headerName: "Customer Name", rowGroup: true, enableRowGroup: true },
+        { field: 'date', headerName: "Placement Date", sort: 'desc', filter: 'date', valueFormatter: dateFormatter },
+        { field: 'orderId', headerName: "Order ID" },
+        { field: 'product', headerName: "Product", cellRenderer: productFormatter, pivot: true, enablePivot: true },
+        { field: 'orderStatus', headerName: "Status", cellRenderer: shipmentStatusFormatter, pivot: true, enablePivot: true },
+        { field: 'price', headerName: "Purchase Price (£)", filter: 'number', aggFunc: 'count', enablePivot: true }
       ],
       defaultColDef: {
         flex: 1,
@@ -48,38 +50,39 @@ export default class PivotTable extends Component<AgGridReactProps, PivotTableSt
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
 
-    const updateData = (data: any[]) => params.api?.setRowData(data);
-
-    fetch('https://www.ag-grid.com/example-assets/olympic-winners.json')
-      .then((resp) => resp.json())
-      .then((data) => updateData(data));
+    const customerData = generateCustomerPurchaseHistory(150);
+    this.gridApi?.setRowData(customerData);
   };
 
   render() {
     return (
-      <div style={{ width: '100%', height: '100vh' }}>
-        <div
-          style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
-        >
-          <div
-            style={{
-              height: '100%',
-              width: '100%',
-            }}
-            className="ag-theme-balham-dark"
-          >
-            <AgGridReact
-              columnDefs={this.state.columnDefs}
-              defaultColDef={this.state.defaultColDef}
-              autoGroupColumnDef={this.state.autoGroupColumnDef}
-              pivotMode={true}
-              sideBar={true}
-              onGridReady={this.onGridReady}
-              rowData={this.state.rowData}
-            />
+
+      <div className='pivot-container'>
+        
+        <DashboardHeader viewTitle="Sales Analytics"/>
+
+        <div style={{ width: '100%', height: '92.5vh' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+            <div
+              style={{
+                height: '100%',
+                width: '100%',
+              }}
+              className="ag-theme-balham-dark"
+            >
+              <AgGridReact
+                columnDefs={this.state.columnDefs}
+                defaultColDef={this.state.defaultColDef}
+                autoGroupColumnDef={this.state.autoGroupColumnDef}
+                pivotMode={true}
+                sideBar={true}
+                onGridReady={this.onGridReady}
+                rowData={this.state.rowData}
+              />
+            </div>
           </div>
         </div>
-      </div>
+    </div>
     );
   }
 }
