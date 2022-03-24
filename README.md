@@ -19,7 +19,7 @@ At time of writing this repository contains the following examples:
 5. Grouping Data Grid: again using [AG Grid](https://www.ag-grid.com/), I show you how row grouping can be used to transform relationship related data, in this case gift card purchaser and recipient, using grouping. A similar effect for subdetails can also be achieved using the [Master/ Detail capabilities](ag-grid.com/react-data-grid/master-detail/) of many data grids, including [AG Grid](https://www.ag-grid.com/).
 6. Tree/ Bubble Chart: TODO
 7. Sankey/ Chord Diagram: TODO
-8. Pivot Table: a simple implementation of [AG Grid](https://www.ag-grid.com/), making use of their [pivot capabilities](https://www.ag-grid.com/react-data-grid/pivoting/). Pivot controls are useful for open exploration over existing data sets. Note that pivoting is an enterprise feature, which requires a licence. The control is used in evaluation mode using some of AG Grid's own sample medal data.
+8. Pivot Table: a simple implementation of [AG Grid](https://www.ag-grid.com/), making use of their [pivot capabilities](https://www.ag-grid.com/react-data-grid/pivoting/). Pivot controls are useful for open exploration over existing data sets. Note that pivoting is an enterprise feature, which requires a license. The control is used in evaluation mode using some of AG Grid's own sample medal data.
 9. Chart With Data Grid Drilldown: TODO
 
 ## Getting Started
