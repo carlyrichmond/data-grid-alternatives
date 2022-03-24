@@ -1,0 +1,29 @@
+body {
+    background-color: #32393c;
+    overflow-y: hidden;
+}
+
+.filters-toolbar {
+    background-color: #32393c;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+}
+
+.toolbar-component {
+    margin: 1rem 0 1rem 1rem !important;
+}
+
+#auto-complete {
+    width: 20%;
+    height: 80%;
+}
+
+.ag-center-cols-viewport {
+    overflow-x: hidden;
+}
+
+.product-icon {
+    padding-right: 0.5rem;
+}

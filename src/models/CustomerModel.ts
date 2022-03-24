@@ -34,6 +34,7 @@ export const orderStatusMapping: IconMapping<OrderStatus> = {
 
 export interface CustomerPurchase {
     customerName: string;
+    recipient?: string;
     date: Date;
     orderId: string;
     product: ProductType;

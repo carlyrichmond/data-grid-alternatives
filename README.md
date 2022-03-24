@@ -16,7 +16,7 @@ At time of writing this repository contains the following examples:
 2. Time Series Line Chart: a simple line chart utilising [Highcharts](https://www.highcharts.com/)
 3. Product Bar Chart: a bar chart showing single category and stackable configurations using [Recharts](https://recharts.org/).
 4. Summary Cards: a simple card showcasing the ability to combine visualisations with summary statistics. The line chart utilizes [Recharts](https://recharts.org/). While cards can be implemented using basic CSS and HTML, in this case I've chosen to highlight the component library [MUI](https://mui.com/) to promote reusable component libraries.
-5. Grouping Data Grid: TODO
+5. Grouping Data Grid: again using [AG Grid](https://www.ag-grid.com/), I show you how row grouping can be used to transform relationship related data, in this case gift card purchaser and recipient, using grouping. A similar effect for subdetails can also be achieved using the [Master/ Detail capabilities](ag-grid.com/react-data-grid/master-detail/) of many data grids, including [AG Grid](https://www.ag-grid.com/).
 6. Tree/ Bubble Chart: TODO
 7. Sankey/ Chord Diagram: TODO
 8. Pivot Table: a simple implementation of [AG Grid](https://www.ag-grid.com/), making use of their [pivot capabilities](https://www.ag-grid.com/react-data-grid/pivoting/). Pivot controls are useful for open exploration over existing data sets. Note that pivoting is an enterprise feature, which requires a licence. The control is used in evaluation mode using some of AG Grid's own sample medal data.

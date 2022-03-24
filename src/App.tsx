@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import GroupingCustomerGrid from './components/GroupingCustomerGrid/GroupingCustomerGrid.lazy';
 import PivotTable from './components/PivotTable/PivotTable.lazy';
 import ProductBarChart from './components/ProductBarChart/ProductBarChart.lazy';
 import SameOldDataGrid from './components/SameOldDataGrid/SameOldDataGrid.lazy';
@@ -18,7 +19,8 @@ function App() {
      {/* <SummaryCardList/> */}
      { /* <ProductBarChart/> */} 
       {/* <TimeSeriesLineChart/> */}
-      <PivotTable/> 
+      {/* <PivotTable/> */}
+      <GroupingCustomerGrid/>
     </div>
   );
 }
