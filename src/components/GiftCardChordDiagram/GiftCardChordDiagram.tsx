@@ -89,7 +89,7 @@ export default class GiftCardChordDiagram extends Component<any, GiftCardChordDi
         ribbonTooltip={this.ribbonTooltip}
         keys={CUSTOMERS}
         margin={{ top: 60, right: 60, bottom: 90, left: 60 }}
-        valueFormat=".2f"
+        valueFormat={formatBalance}
         padAngle={0.02}
         innerRadiusRatio={0.96}
         innerRadiusOffset={0.02}
