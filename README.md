@@ -3,12 +3,14 @@
 This repository contains the accompanying examples for the talk *Oh No! Not Another Data Grid*. This talk has been presented in several forms at the following forums:
 
 1. LJC Lightning Talks
+2. Front Endgineers Meetup
+3. Devoxx UK
 
 For any questions feel free to contact the author [via the handles listed on her GitHub profile](https://github.com/carlyrichmond).
 
 ## Frameworks and Tools
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It makes use of React class components.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Primarily it makes use of React class components.
 
 At time of writing this repository contains the following examples:
 
