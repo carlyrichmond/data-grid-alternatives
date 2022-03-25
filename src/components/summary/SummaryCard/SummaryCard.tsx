@@ -9,6 +9,7 @@ import { Theme, ThemeProvider } from '@mui/material/styles';
 import { CustomerSummary } from '../../../models/CustomerModel';
 import { initializeDarkTheme } from '../../../theme/MUIThemeInitialisation';
 import SummaryCardChart from '../SummaryCardChart/SummaryCardChart.lazy';
+import { formatBalance, formatCounts } from '../../../utils/Formatters';
 
 interface SummaryCardProps {
   customer: CustomerSummary;
@@ -18,18 +19,6 @@ export default class SummaryCard extends React.Component<SummaryCardProps, any> 
   
   constructor(props: SummaryCardProps) {
     super(props);
-  }
-
-  private addCommas(num: number): string {
-    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
-  }
-
-  private formatBalance(num: number): string {
-    return '£' + this.addCommas(num);
-  }
-
-  private formatCounts(num: number): string {
-    return this.addCommas(num);
   }
 
   render() 
@@ -56,13 +45,13 @@ export default class SummaryCard extends React.Component<SummaryCardProps, any> 
             variant="h6"
             color="text.secondary"
             component="div">
-            {this.formatBalance(this.props.customer.net_purchases_gbp)} <span className="descriptor">purchased</span>
+            {formatBalance(this.props.customer.net_purchases_gbp)} <span className="descriptor">purchased</span>
           </Typography>
           <Typography
             variant="h6"
             color="text.secondary"
             component="div">
-            {this.formatCounts(this.props.customer.item_purchase_count)} <span className="descriptor">items purchased to date</span>
+            {formatCounts(this.props.customer.item_purchase_count)} <span className="descriptor">items purchased to date</span>
           </Typography>
         </CardContent>
       </Box>

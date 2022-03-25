@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import GiftCardChordDiagram from './components/GiftCardChordDiagram/GiftCardChordDiagram.lazy';
 import GroupingCustomerGrid from './components/GroupingCustomerGrid/GroupingCustomerGrid.lazy';
 import PivotTable from './components/PivotTable/PivotTable.lazy';
 import ProductBarChart from './components/ProductBarChart/ProductBarChart.lazy';
@@ -20,7 +21,8 @@ function App() {
      { /* <ProductBarChart/> */} 
       {/* <TimeSeriesLineChart/> */}
       {/* <PivotTable/> */}
-      <GroupingCustomerGrid/>
+      {/* <GroupingCustomerGrid/> */}
+      <GiftCardChordDiagram/>
     </div>
   );
 }
