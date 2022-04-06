@@ -128,7 +128,7 @@ export default class GroupingCustomerGrid extends Component<AgGridReactProps, Gr
           
           <div
             style={{
-              height: '75%',
+              height: '70%',
               width: '90%',
             }}
             className="ag-theme-balham-dark">
