@@ -11,7 +11,6 @@ import { initializeDarkTheme } from '../../theme/MUIThemeInitialisation';
 import { CUSTOMERS, generateCustomerPurchaseHistory, PRODUCTS } from '../../models/CustomerDataGenerator';
 import { CustomerPurchase, ProductType } from '../../models/CustomerModel';
 import { dateFormatter, productFormatter, shipmentStatusFormatter } from '../../utils/GridUtils';
-import DashboardHeader from '../DashboardHeader/DashboardHeader';
 
 interface GroupingCustomerGridState {
   gridSettings: {
@@ -93,8 +92,6 @@ export default class GroupingCustomerGrid extends Component<AgGridReactProps, Gr
       <ThemeProvider theme={dropdownDarkModeTheme}>
       <div className="customer-dashboard-container" style={{ width: '100%', height: '100vh' }}>
         
-        <DashboardHeader viewTitle="Sales Portal"/>
-        
         <div
           style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>
             
@@ -131,7 +128,7 @@ export default class GroupingCustomerGrid extends Component<AgGridReactProps, Gr
           
           <div
             style={{
-              height: '80%',
+              height: '75%',
               width: '90%',
             }}
             className="ag-theme-balham-dark">
@@ -149,5 +146,3 @@ export default class GroupingCustomerGrid extends Component<AgGridReactProps, Gr
     );
   }
 }
-
-render(<GroupingCustomerGrid></GroupingCustomerGrid>, document.querySelector('#root'));

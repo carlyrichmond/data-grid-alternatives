@@ -42,7 +42,7 @@ export default class ProductBarChart extends PureComponent<any, BarChartState> {
 
     return (
       <div className="product-chart-container">
-        <h2>W.E. Coyote Product Purchase History</h2>
+        <h2>W.E. Coyote</h2>
         <h3>Net Count, January-July 2021</h3>
           <BarChart
             width={1400}

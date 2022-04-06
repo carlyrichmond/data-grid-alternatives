@@ -126,5 +126,3 @@ export default class TimeSeriesLineChart extends Component<HighchartsReact.Props
 
   }
 }
-
-render(<TimeSeriesLineChart />, document.getElementById('root'));

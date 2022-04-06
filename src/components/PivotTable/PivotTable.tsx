@@ -7,7 +7,6 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham-dark.css';
 import { dateFormatter, productFormatter, shipmentStatusFormatter } from '../../utils/GridUtils';
 import { generateCustomerPurchaseHistory } from '../../models/CustomerDataGenerator';
-import DashboardHeader from '../DashboardHeader/DashboardHeader';
 
 interface PivotTableState {
   columnDefs: ColDef[],
@@ -58,10 +57,8 @@ export default class PivotTable extends Component<AgGridReactProps, PivotTableSt
     return (
 
       <div className='pivot-container'>
-        
-        <DashboardHeader viewTitle="Sales Analytics"/>
 
-        <div style={{ width: '100%', height: '92.5vh' }}>
+        <div style={{ width: '100%', height: '80vh' }}>
           <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
             <div
               style={{
@@ -86,5 +83,3 @@ export default class PivotTable extends Component<AgGridReactProps, PivotTableSt
     );
   }
 }
-
-render(<PivotTable></PivotTable>, document.querySelector('#root'));

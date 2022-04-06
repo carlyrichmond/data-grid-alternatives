@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { AgGridReact, AgGridReactProps} from 'ag-grid-react';
-import { ColDef, ColumnApi, GridApi, ICellRendererParams } from 'ag-grid-community';
+import { ColDef, ColumnApi, GridApi } from 'ag-grid-community';
 import 'ag-grid-enterprise';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham-dark.css';
@@ -11,7 +11,6 @@ import { initializeDarkTheme } from '../../theme/MUIThemeInitialisation';
 import { CUSTOMERS, generateCustomerPurchaseHistory, PRODUCTS } from '../../models/CustomerDataGenerator';
 import { CustomerPurchase } from '../../models/CustomerModel';
 import { dateFormatter, productFormatter, shipmentStatusFormatter } from '../../utils/GridUtils';
-import DashboardHeader from '../DashboardHeader/DashboardHeader';
 
 interface SameOldDataGridState {
   gridSettings: {
@@ -99,8 +98,6 @@ export default class SameOldDataGrid extends Component<AgGridReactProps, SameOld
       <ThemeProvider theme={dropdownDarkModeTheme}>
       <div className="customer-dashboard-container" style={{ width: '100%', height: '100vh' }}>
         
-        <DashboardHeader viewTitle="Sales Portal"/>
-        
         <div
           style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>
             
@@ -138,7 +135,7 @@ export default class SameOldDataGrid extends Component<AgGridReactProps, SameOld
           
           <div
             style={{
-              height: '80%',
+              height: '70%',
               width: '90%',
             }}
             className="ag-theme-balham-dark">
@@ -157,5 +154,3 @@ export default class SameOldDataGrid extends Component<AgGridReactProps, SameOld
     );
   }
 }
-
-render(<SameOldDataGrid></SameOldDataGrid>, document.querySelector('#root'));

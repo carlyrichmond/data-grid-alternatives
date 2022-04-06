@@ -3,7 +3,6 @@ import './SummaryCardList.css';
 import { render } from 'react-dom';
 import { CustomerSummaries, CustomerSummary } from '../../../models/CustomerModel';
 import SummaryCard from '../SummaryCard/SummaryCard';
-import DashboardHeader from '../../DashboardHeader/DashboardHeader';
 
 export default class SummaryCardList extends PureComponent<any, CustomerSummaries> {
   
@@ -33,16 +32,11 @@ export default class SummaryCardList extends PureComponent<any, CustomerSummarie
   render() 
   {
     return (
-      <div>
-        <DashboardHeader viewTitle="2022 Customer Statistics"/>
         <div className="summary-cards-container">
           {this.state.customers.map((customer: CustomerSummary) => (
           this.renderCard(customer)
         ))}
       </div>
-      </div>
     )
   }
 }
-
-render(<SummaryCardList/>, document.getElementById('root'));

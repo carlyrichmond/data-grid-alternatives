@@ -4,7 +4,6 @@ import { ResponsiveChord, RibbonTooltipComponentProps } from '@nivo/chord'
 import { TableTooltip, Chip } from '@nivo/tooltip'
 import { render } from 'react-dom';
 import { CUSTOMERS } from '../../models/CustomerDataGenerator';
-import DashboardHeader from '../DashboardHeader/DashboardHeader';
 import { formatBalance } from '../../utils/Formatters';
 
 interface GiftCardChordDiagramState {
@@ -82,8 +81,6 @@ export default class GiftCardChordDiagram extends Component<any, GiftCardChordDi
     return (
      <div className="chord-diagram-container">
 
-       <DashboardHeader viewTitle="Gift Card Recipients"/>
-
        <ResponsiveChord
         data={this.state.data}
         ribbonTooltip={this.ribbonTooltip}
@@ -155,5 +152,3 @@ export default class GiftCardChordDiagram extends Component<any, GiftCardChordDi
     );
   }
 }
-
-render(<GiftCardChordDiagram></GiftCardChordDiagram>, document.querySelector('#root'));
