@@ -22,38 +22,36 @@ export default class TimeSeriesLineChart extends Component<HighchartsReact.Props
       chartOptions: {
         chart: {
           zoomType: 'x',
-          backgroundColor:{
-            linearGradient:{
-              x1:0,
-              y1:0,
-              x2:0,
-              y2:1
-            },
-            stops:[[0,"#1f1836"],[1,"#784BA0"]]}
         },
         title: {
-          text: 'ACME @ NYSE'
+          text: 'ACME @ NYSE',
+          style: {fontSize: '1.5em', fontFamily: 'Open Sans'}
         },
         subtitle: {
-          text: 'ACME Corporation'
+          text: 'ACME Corporation',
+          style: {fontSize: '1em', fontFamily: 'Roboto'}
         },
         legend: {
           enabled: false
         },
         tooltip: {
           borderWidth: 0,
-          backgroundColor: "#784BA0",
-          shadow: !0
+          backgroundColor: '#32393c',
+          shadow: !0,
+          headerFormat: '<span style="font-size: 1.2em; font-family: Open Sans">{point.key}</span></br>',
+          style: {fontSize: '1.25em', fontFamily: 'Open Sans'}
         },
         xAxis: {
           type: 'datetime',
           labels: {
-            format: '{value:%e %b %Y}'
+            format: '{value:%e %b %Y}',
+            style: {fontSize: '1em', fontFamily: 'Roboto'}
           }          
         },
         yAxis: {
           title: {
-            text: 'Close ($)'
+            text: 'Close ($)',
+            style: {fontSize: '1em', fontFamily: 'Roboto'}
           }
         },
         plotOptions: {
@@ -66,8 +64,9 @@ export default class TimeSeriesLineChart extends Component<HighchartsReact.Props
                       y2: 1
                   },
                   stops: [
-                      [0, '#3cacff'],
-                      [1, '(119,152,191,0.25)']
+                      [0, '#FF3CAC'],
+                      [1, '#784BA0'],
+                      [2, '#2B86C5']
                   ]
               },
               marker: {
