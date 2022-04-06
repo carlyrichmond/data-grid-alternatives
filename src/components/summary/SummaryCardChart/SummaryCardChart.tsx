@@ -52,7 +52,7 @@ export default class SummaryCardChart extends PureComponent<any, LineChartState>
           <YAxis />
           <Legend verticalAlign="top" height={36}/>
           <Tooltip contentStyle={{ backgroundColor: '#121212' }}/>
-          <Line name="Number of Products Purchased per Month" type="monotone" dataKey="productCount" stroke="#8884d8" dot={false}/>
+          <Line name="Number of Products Purchased per Month" type="monotone" dataKey="productCount" stroke="#cecece" dot={false}/>
         </LineChart>
     )
   }

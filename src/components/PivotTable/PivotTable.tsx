@@ -74,8 +74,7 @@ export default class PivotTable extends Component<AgGridReactProps, PivotTableSt
                 pivotMode={true}
                 sideBar={true}
                 onGridReady={this.onGridReady}
-                rowData={this.state.rowData}
-              />
+                rowData={this.state.rowData}/>
             </div>
           </div>
         </div>

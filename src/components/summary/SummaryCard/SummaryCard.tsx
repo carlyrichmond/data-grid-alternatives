@@ -25,7 +25,7 @@ export default class SummaryCard extends React.Component<SummaryCardProps, any> 
   {
     const darkModeTheme: Theme = initializeDarkTheme();
     darkModeTheme.palette.text = {
-      primary: '#784BA0',
+      primary: '#cecece',
       secondary: '#2B86C5',
       disabled: '#e5e5e5'
     };
