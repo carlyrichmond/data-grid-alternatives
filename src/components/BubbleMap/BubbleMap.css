@@ -1,0 +1,13 @@
+.main-panel {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.map-headers {
+    margin-top: 0;
+}
+
+h3 {
+    color: #898989;
+}

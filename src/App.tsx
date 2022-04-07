@@ -1,9 +1,10 @@
-import { faArrowTrendUp, faBoxesStacked, faCashRegister, faCreditCard, faGifts, faPeopleArrowsLeftRight, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faArrowTrendUp, faBoxesStacked, faCashRegister, faCreditCard, faGifts, faMapLocation, faPeopleArrowsLeftRight, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import { Box, Tab, Theme, ThemeProvider } from '@mui/material';
 import React from 'react';
 import './App.css';
+import BubbleMap from './components/BubbleMap/BubbleMap.lazy';
 import DashboardHeader from './components/DashboardHeader/DashboardHeader';
 import GiftCardChordDiagram from './components/GiftCardChordDiagram/GiftCardChordDiagram.lazy';
 import GroupingCustomerGrid from './components/GroupingCustomerGrid/GroupingCustomerGrid.lazy';
@@ -20,7 +21,7 @@ import { initializeDarkTheme } from './theme/MUIThemeInitialisation';
  * @return {JSX.Element} initial application view
  */
 function App() {
-  const [value, setValue] = React.useState('1');
+  const [value, setValue] = React.useState('8');
   const currentHeader = 'Sales Portal';
   const tabDarkModeTheme: Theme = initializeDarkTheme();
 
@@ -45,6 +46,7 @@ function App() {
               <Tab icon={<FontAwesomeIcon icon={faGifts}/>} label="Gift Cards Master" value="5"/>
               <Tab icon={<FontAwesomeIcon icon={faPeopleArrowsLeftRight}/>} label="Gift Card Relationships" value="6"/>
               <Tab icon={<FontAwesomeIcon icon={faCashRegister}/>} label="Analytics" value="7"/>
+              <Tab icon={<FontAwesomeIcon icon={faMapLocation}/>} label="Distribution" value="8"/>
             </TabList>
           </Box>
           <TabPanel value="1">
@@ -67,6 +69,9 @@ function App() {
           </TabPanel>
           <TabPanel value="7">
             <PivotTable/>
+          </TabPanel>
+          <TabPanel value="8">
+            <BubbleMap/>
           </TabPanel>
           </TabContext>
         </ThemeProvider>

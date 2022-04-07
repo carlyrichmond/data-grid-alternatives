@@ -7,7 +7,7 @@ import { CUSTOMERS } from '../../models/CustomerDataGenerator';
 import { formatBalance } from '../../utils/Formatters';
 
 interface GiftCardChordDiagramState {
-  data: any[]
+  data: number[][]
 }
 
 export default class GiftCardChordDiagram extends Component<any, GiftCardChordDiagramState> {
