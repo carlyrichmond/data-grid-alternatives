@@ -62,7 +62,7 @@ export default class BubbleMap extends Component<any, BubbleMapState> {
             style={{ fontFamily: 'Roboto', fontSize: '0.6em' }}>{fulfilledPurchaseCount}</text>
             <text
               textAnchor='middle'
-              y={-(fulfilledPurchaseCount/4)+this.state.markerOffset}
+              y={-(fulfilledPurchaseCount/4) + this.state.markerOffset}
               style={{ fontFamily: 'Open Sans', fontSize: '0.65em', fill: '#2B86C5' }}>
               {name}
             </text>
