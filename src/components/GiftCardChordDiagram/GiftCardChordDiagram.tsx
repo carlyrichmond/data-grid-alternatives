@@ -5,13 +5,14 @@ import { TableTooltip, Chip } from '@nivo/tooltip'
 import { render } from 'react-dom';
 import { CUSTOMERS } from '../../models/CustomerDataGenerator';
 import { formatBalance } from '../../utils/Formatters';
+import { BaseChartProps } from '../../models/BaseProps';
 
 interface GiftCardChordDiagramState {
   data: number[][]
 }
 
-export default class GiftCardChordDiagram extends Component<any, GiftCardChordDiagramState> {
-  constructor(props: any | Readonly<any>) {
+export default class GiftCardChordDiagram extends Component<BaseChartProps, GiftCardChordDiagramState> {
+  constructor(props: BaseChartProps) {
     super(props);
 
     this.state = {
@@ -79,7 +80,7 @@ export default class GiftCardChordDiagram extends Component<any, GiftCardChordDi
   render() {
 
     return (
-     <div className="chord-diagram-container">
+     <div className={this.props.isDashboardChild ? "small-diagram-container" : "full-page-diagram-container"}>
 
        <ResponsiveChord
         data={this.state.data}

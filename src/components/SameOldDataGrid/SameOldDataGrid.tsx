@@ -101,7 +101,7 @@ export default class SameOldDataGrid extends Component<AgGridReactProps, SameOld
         <div
           style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>
             
-            <div className="filters-toolbar">
+          <div className="filters-toolbar">
             
               <Autocomplete sx={{ m: 1, width: 400 }}
               {...this.customerAutocompleteSettings}
@@ -131,7 +131,7 @@ export default class SameOldDataGrid extends Component<AgGridReactProps, SameOld
                   ))}
                 </Select>
               </FormControl>
-        </div>
+          </div>
           
           <div
             style={{

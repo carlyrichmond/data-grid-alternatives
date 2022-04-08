@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import './ProductBarChart.css';
 import { render } from 'react-dom';
 import { BarChart, CartesianGrid, Legend, Tooltip, XAxis, YAxis, Bar } from 'recharts';
+import { BaseChartProps } from '../../models/BaseProps';
 
 interface DataPoint {
   name: string;
@@ -14,9 +15,9 @@ interface BarChartState {
   data: DataPoint[];
 }
 
-export default class ProductBarChart extends PureComponent<any, BarChartState> {
+export default class ProductBarChart extends PureComponent<BaseChartProps, BarChartState> {
   
-  constructor(props: any) {
+  constructor(props: BaseChartProps) {
     super(props);
 
     this.state = {
@@ -39,14 +40,16 @@ export default class ProductBarChart extends PureComponent<any, BarChartState> {
 
   render() {
     const data = this.state.data;
+    const width = this.props.isDashboardChild ? 1400/2 : 1400;
+    const height = this.props.isDashboardChild ? 600/2 : 600;
 
     return (
       <div className="product-chart-container">
         <h2>W.E. Coyote</h2>
         <h3>Net Count, January-July 2021</h3>
           <BarChart
-            width={1400}
-            height={600}
+            width={width}
+            height={height}
             data={data}
             margin={{
               top: 20,

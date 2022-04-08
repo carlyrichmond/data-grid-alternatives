@@ -1,8 +1,9 @@
 import React, { lazy, Suspense } from 'react';
+import { BaseChartProps } from '../../models/BaseProps';
 
 const LazyGiftCardChordDiagram = lazy(() => import('./GiftCardChordDiagram'));
 
-const GiftCardChordDiagram = (props: JSX.IntrinsicAttributes & { children?: React.ReactNode; }) => (
+const GiftCardChordDiagram = (props: BaseChartProps) => (
   <Suspense fallback={null}>
     <LazyGiftCardChordDiagram {...props} />
   </Suspense>

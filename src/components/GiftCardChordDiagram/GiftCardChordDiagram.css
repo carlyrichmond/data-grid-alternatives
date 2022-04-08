@@ -1,4 +1,9 @@
-.chord-diagram-container {
+.full-page-diagram-container {
     width: 100%;
     height: 82vh;
+}
+
+.small-diagram-container {
+    width: 50%;
+    height: 50vh;
 }
