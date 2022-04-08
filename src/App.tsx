@@ -1,10 +1,11 @@
-import { faArrowTrendUp, faBoxesStacked, faCashRegister, faCreditCard, faGifts, faMapLocation, faPeopleArrowsLeftRight, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faArrowTrendUp, faBoxesStacked, faCashRegister, faCreditCard, faGifts, faMagnifyingGlassChart, faMapLocation, faPeopleArrowsLeftRight, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import { Box, Tab, Theme, ThemeProvider } from '@mui/material';
 import React from 'react';
 import './App.css';
 import BubbleMap from './components/BubbleMap/BubbleMap.lazy';
+import ChartDrilldown from './components/ChartDrilldown/ChartDrilldown.lazy';
 import DashboardHeader from './components/DashboardHeader/DashboardHeader';
 import GiftCardChordDiagram from './components/GiftCardChordDiagram/GiftCardChordDiagram.lazy';
 import GroupingCustomerGrid from './components/GroupingCustomerGrid/GroupingCustomerGrid.lazy';
@@ -21,7 +22,7 @@ import { initializeDarkTheme } from './theme/MUIThemeInitialisation';
  * @return {JSX.Element} initial application view
  */
 function App() {
-  const [value, setValue] = React.useState('8');
+  const [value, setValue] = React.useState('9');
   const currentHeader = 'Sales Portal';
   const tabDarkModeTheme: Theme = initializeDarkTheme();
 
@@ -35,6 +36,8 @@ function App() {
         <DashboardHeader viewTitle={currentHeader}/>
       </header>
       <main>
+        {// TODO Add scroll support on tab navigation
+        }
         <ThemeProvider theme={tabDarkModeTheme}>
           <TabContext value={value}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -47,6 +50,7 @@ function App() {
               <Tab icon={<FontAwesomeIcon icon={faPeopleArrowsLeftRight}/>} label="Gift Card Relationships" value="6"/>
               <Tab icon={<FontAwesomeIcon icon={faCashRegister}/>} label="Analytics" value="7"/>
               <Tab icon={<FontAwesomeIcon icon={faMapLocation}/>} label="Distribution" value="8"/>
+              <Tab icon={<FontAwesomeIcon icon={faMagnifyingGlassChart}/>} label="Dashboard" value="9"/>
             </TabList>
           </Box>
           <TabPanel value="1">
@@ -72,6 +76,9 @@ function App() {
           </TabPanel>
           <TabPanel value="8">
             <BubbleMap/>
+          </TabPanel>
+          <TabPanel value="9">
+            <ChartDrilldown/>
           </TabPanel>
           </TabContext>
         </ThemeProvider>
