@@ -1,13 +1,13 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import BarChart from './ProductBarChart';
+import ProductColumnChart from './ProductColumnChart';
 
-describe('<ProductBarChart />', () => {
+describe('<ProductColumnChart />', () => {
   test('it should mount', () => {
-    render(<BarChart />);
+    render(<ProductColumnChart/>);
     
-    const barChart = screen.getByTestId('ProductBarChart');
+    const barChart = screen.getByTestId('ProductColumnChart');
 
     expect(barChart).toBeInTheDocument();
   });

@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { BaseChartProps } from '../../models/BaseProps';
+import { BaseChartProps } from '../../models/CommonChartModels';
 
 const LazyGiftCardChordDiagram = lazy(() => import('./GiftCardChordDiagram'));
 

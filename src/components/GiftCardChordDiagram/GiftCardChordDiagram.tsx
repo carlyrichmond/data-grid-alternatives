@@ -5,7 +5,7 @@ import { TableTooltip, Chip } from '@nivo/tooltip'
 import { render } from 'react-dom';
 import { CUSTOMERS } from '../../models/CustomerDataGenerator';
 import { formatBalance } from '../../utils/Formatters';
-import { BaseChartProps } from '../../models/BaseProps';
+import { BaseChartProps } from '../../models/CommonChartModels';
 
 interface GiftCardChordDiagramState {
   data: number[][]

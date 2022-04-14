@@ -1,14 +1,14 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import SameOldDataGrid from './SameOldDataGrid';
+import SameOldDataGridView from './SameOldDataGridView';
 
 describe('<SameOldDataGrid />', () => {
   test('it should mount', () => {
-    render(<SameOldDataGrid />);
+    render(<SameOldDataGridView/>);
     
-    const sameOldDataGrid = screen.getByTestId('SameOldDataGrid');
+    const sameOldDataGridView = screen.getByTestId('SameOldDataGridView');
 
-    expect(sameOldDataGrid).toBeInTheDocument();
+    expect(sameOldDataGridView).toBeInTheDocument();
   });
 });

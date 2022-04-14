@@ -41,3 +41,10 @@ export interface CustomerPurchase {
     orderStatus: OrderStatus;
     price: number;
 }
+
+export interface ProductCounts {
+    name: string;
+    anvilCount: number;
+    giantRubberBandCount: number; 
+    superGiantRubberBandCount: number;
+  }

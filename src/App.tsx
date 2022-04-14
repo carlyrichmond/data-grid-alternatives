@@ -10,8 +10,8 @@ import DashboardHeader from './components/DashboardHeader/DashboardHeader';
 import GiftCardChordDiagram from './components/GiftCardChordDiagram/GiftCardChordDiagram.lazy';
 import GroupingCustomerGrid from './components/GroupingCustomerGrid/GroupingCustomerGrid.lazy';
 import PivotTable from './components/PivotTable/PivotTable.lazy';
-import ProductBarChart from './components/ProductBarChart/ProductBarChart.lazy';
-import SameOldDataGrid from './components/SameOldDataGrid/SameOldDataGrid.lazy';
+import ProductColumnChart from './components/ProductColumnChart/ProductColumnChart.lazy';
+import SameOldDataGridView from './components/SameOldDataGridView/SameOldDataGridView.lazy';
 import SummaryCardList from './components/summary/SummaryCardList/SummaryCardList.lazy';
 import TimeSeriesLineChart from './components/TimeSeriesLineChart/TimeSeriesLineChart';
 import { initializeDarkTheme } from './theme/MUIThemeInitialisation';
@@ -54,13 +54,13 @@ function App() {
             </TabList>
           </Box>
           <TabPanel value="1">
-            <SameOldDataGrid/>
+            <SameOldDataGridView/>
           </TabPanel>
           <TabPanel value="2">
             <SummaryCardList/>
           </TabPanel>
           <TabPanel value="3">
-            <ProductBarChart/>
+            <ProductColumnChart/>
           </TabPanel>
           <TabPanel value="4">
             <TimeSeriesLineChart/>

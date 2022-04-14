@@ -4,14 +4,11 @@ import Highcharts from 'highcharts';
 import DarkUnica from 'highcharts/themes/dark-unica'
 import HighchartsReact from 'highcharts-react-official';
 import './TimeSeriesLineChart.css';
+import { HighchartsChartState } from '../../models/CommonChartModels';
 
 DarkUnica(Highcharts);
 
-interface ChartState {
-  chartOptions: Highcharts.Options
-}
-
-export default class TimeSeriesLineChart extends Component<HighchartsReact.Props, ChartState> {
+export default class TimeSeriesLineChart extends Component<HighchartsReact.Props, HighchartsChartState> {
   constructor(props: HighchartsReact.Props) {
     super(props);
 

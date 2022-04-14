@@ -1,4 +1,4 @@
-import { CustomerPurchase, ProductType } from "./CustomerModel";
+import { CustomerPurchase, ProductCounts, ProductType } from "./CustomerModel";
 
 export const CUSTOMERS: string[] = ['W. E. Coyote', 'R. Runner', 'P. Le Pew', 'B. Bunny', 'D. Duck', 'M. Martian'];
 
@@ -42,3 +42,16 @@ export function generateCustomerPurchaseHistory(purchaseCount: number): Customer
 
     return customerPurchases;
 }
+
+export function generateProductData(): ProductCounts[] {
+    const categories: string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+    return categories.map((category: string) => {
+       return {
+        name: category,
+        anvilCount: +(Math.random() * (15 - 1) + 1).toFixed(1),
+        giantRubberBandCount: +(Math.random() * (5 - 1) + 1).toFixed(1), 
+        superGiantRubberBandCount: +(Math.random() * (8 - 1) + 1).toFixed(1)
+      };
+    });
+  }
