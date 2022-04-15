@@ -6,52 +6,56 @@ import GiftCardChordDiagram from '../GiftCardChordDiagram/GiftCardChordDiagram.l
 import StackedProductBarChart from '../StackedProductBarChart/StackedProductBarChart.lazy';
 import './ChartDrilldown.css';
 
-export default class ChartDrilldown extends React.Component {
+interface ChartDrilldownState {
+  chartSettings: BaseChartProps;
+  dataGridSettings: FilterSelection;
+}
 
-  private readonly baseChartProps: BaseChartProps = { isDashboardChild: true, handleDataPointClick: this.updateFilterSelection.bind(this) };
-  private dataGridProps: FilterSelection;
+export default class ChartDrilldown extends React.Component<any, ChartDrilldownState> {
 
-  constructor(props: any | Readonly<any>) {
+  constructor(props: ChartDrilldownState | Readonly<ChartDrilldownState>) {
     super(props);
-    this.dataGridProps = { customerName: 'W. E. Coyote', productCategory: null };
+
+    this.state = {
+      chartSettings: { isDashboardChild: true, handleDataPointClick: this.updateFilterSelection.bind(this) },
+      dataGridSettings: { customerName: 'W. E. Coyote', productCategory: null }
+    }
   }
 
   private updateFilterSelection(event: any) {
+    const filterSelection: FilterSelection = { customerName: null, productCategory: 'Gift Card' }
     // Highcharts
     if (event.point) {
-      this.dataGridProps = {
-        customerName: null, productCategory: event.point.series.name
-      };
+     filterSelection.productCategory = event.point.series.name
     } 
     // Nivo Chord Ribbon
     else if (event.source) {
-      this.dataGridProps = {
-        customerName: event.source.id, productCategory: 'Gift Card'
-      }
+      filterSelection.customerName = event.source.id;
     }
     // Nivo Chord Arc (must come after Ribbon as id used as combined key)
     else if (event.id) {
-      this.dataGridProps = {
-        customerName: event.id, productCategory: 'Gift Card'
-      }
+      filterSelection.customerName = event.id;
     } 
+
+    const newState: ChartDrilldownState = { chartSettings: this.state.chartSettings, dataGridSettings: filterSelection };
+    this.setState(newState);
   }
 
   render() {
     return (
       <div className="main-dashboard-panel">
         <div className="bar-chart-panel">
-          <StackedProductBarChart {...this.baseChartProps}/>
+          <StackedProductBarChart {...this.state.chartSettings}/>
         </div>
 
         <div className="chord-diagram-container">
             <h3 className="component-heading">Gift Card Relationships</h3>
-            <GiftCardChordDiagram {...this.baseChartProps}/>
+            <GiftCardChordDiagram {...this.state.chartSettings}/>
           </div>
         
         <div className="grid-panel" style={{width: '100%', height: '33vh'}}>
           <h3 className="component-heading">Details</h3>
-          <DataGrid {...this.dataGridProps}/>
+          <DataGrid {...this.state.dataGridSettings}/>
         </div>
       </div>
     );

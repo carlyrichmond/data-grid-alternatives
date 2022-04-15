@@ -19,11 +19,3 @@ body {
     width: 20%;
     height: 80%;
 }
-
-.ag-center-cols-viewport {
-    overflow-x: hidden;
-}
-
-.product-icon {
-    padding-right: 0.5rem;
-}

@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from 'react';
 
 const LazyChartDrilldown = lazy(() => import('./ChartDrilldown'));
 
-const ChartDrilldown = (props: JSX.IntrinsicAttributes & { children?: React.ReactNode; }) => (
+const ChartDrilldown = (props: any) => (
   <Suspense fallback={null}>
     <LazyChartDrilldown {...props} />
   </Suspense>
