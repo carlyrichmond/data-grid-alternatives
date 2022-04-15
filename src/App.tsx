@@ -22,7 +22,7 @@ import { initializeDarkTheme } from './theme/MUIThemeInitialisation';
  * @return {JSX.Element} initial application view
  */
 function App() {
-  const [value, setValue] = React.useState('9');
+  const [value, setValue] = React.useState('1');
   const currentHeader = 'Sales Portal';
   const tabDarkModeTheme: Theme = initializeDarkTheme();
 
@@ -39,10 +39,12 @@ function App() {
         <TabContext value={value}>
 
           <nav>
-            {// TODO Add scroll support on tab navigation
+            {
             }
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-             <TabList onChange={handleChange} aria-label="Visualisation Samples" centered>
+             <TabList onChange={handleChange}
+                    centered
+                    aria-label="Visualisation Samples" >
                <Tab icon={<FontAwesomeIcon icon={faBoxesStacked}/>} label="Sales Inventory" value="1"/>
                <Tab icon={<FontAwesomeIcon icon={faUser}/>} label="Customer Statistics" value="2"/>
                <Tab icon={<FontAwesomeIcon icon={faCreditCard}/>} label="Purchase History" value="3"/>

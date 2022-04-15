@@ -66,7 +66,7 @@ export default class GroupingCustomerGrid extends Component<AgGridReactProps, Gr
       },
       rowData: null
     },
-    // TODO remove hardcoded filter
+    // Hardcoded filters used in place of update callback
     selectedFilters: {
       selectedProducts: ['Gift Card'],
       selectedCustomers: ''
@@ -78,9 +78,8 @@ export default class GroupingCustomerGrid extends Component<AgGridReactProps, Gr
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
 
-    // TODO add filtering logic for dropdown control and remove filter
     const customerData = generateCustomerPurchaseHistory(150)
-      .filter((purchase: CustomerPurchase) => purchase.product === 'Gift Card');
+      .filter((purchase: CustomerPurchase) => this.state.selectedFilters.selectedProducts.includes(purchase.product));
     this.gridApi?.setRowData(customerData);
   }
 
@@ -135,7 +134,7 @@ export default class GroupingCustomerGrid extends Component<AgGridReactProps, Gr
             <AgGridReact
               columnDefs={this.state.gridSettings.columnDefs}
               defaultColDef={this.state.gridSettings.defaultColDef}
-              onGridReady={this.onGridReady}
+              onGridReady={this.onGridReady.bind(this)}
               rowData={this.state.gridSettings.rowData}
               groupDisplayType="groupRows"
             />

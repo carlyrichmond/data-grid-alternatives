@@ -53,13 +53,15 @@ export default class SameOldDataGridView extends Component<any, SameOldDataGridV
     } = event;
     const newState: SameOldDataGridViewState = this.state;
     newState.selectedFilters.selectedProducts = value === 'string' ? value.split(',') : [value] as string[];
-    // TODO apply transform on data in grid
     this.setState(newState);
   }
 
   render() {
 
     const dropdownDarkModeTheme: Theme = initializeDarkTheme();
+
+    /* Normally we would wire the grid props with the current selection 
+    instead of defaulting the value as I have done here */
     const emptySelection: FilterSelection = { customerName: null, productCategory: null };
 
     return (
