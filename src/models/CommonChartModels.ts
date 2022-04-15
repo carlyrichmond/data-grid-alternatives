@@ -1,6 +1,9 @@
+import { SeriesClickCallbackFunction } from "highcharts";
+
 export interface BaseChartProps {
   className?: string;
-  isDashboardChild?: boolean
+  isDashboardChild?: boolean;
+  handleDataPointClick?: SeriesClickCallbackFunction;
 }
 
 export interface HighchartsChartState {

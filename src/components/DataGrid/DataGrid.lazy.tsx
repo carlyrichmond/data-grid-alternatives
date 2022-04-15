@@ -1,8 +1,9 @@
 import React, { lazy, Suspense } from 'react';
+import { FilterSelection } from './DataGrid';
 
 const LazyDataGrid = lazy(() => import('./DataGrid'));
 
-const DataGrid = (props: JSX.IntrinsicAttributes & { children?: React.ReactNode; }) => (
+const DataGrid = (props: FilterSelection) => (
   <Suspense fallback={null}>
     <LazyDataGrid {...props} />
   </Suspense>

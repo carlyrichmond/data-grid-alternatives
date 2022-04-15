@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import DarkUnica from 'highcharts/themes/dark-unica'
-import { HighchartsChartState } from '../../models/CommonChartModels';
+import { BaseChartProps, HighchartsChartState } from '../../models/CommonChartModels';
 import { generateProductData } from '../../models/CustomerDataGenerator';
 import { ProductCounts } from '../../models/CustomerModel';
 import './StackedProductBarChart.css';
 
 DarkUnica(Highcharts);
 
-export default class StackedProductBarChart extends Component<HighchartsReact.Props, HighchartsChartState> {
-  constructor(props: HighchartsReact.Props) {
+export default class StackedProductBarChart extends Component<BaseChartProps, HighchartsChartState> {
+  constructor(props: BaseChartProps) {
     super(props);
 
     const {categories, series} = this.getStackedProductData();
@@ -19,7 +19,7 @@ export default class StackedProductBarChart extends Component<HighchartsReact.Pr
       chartOptions: {
         chart: {
           zoomType: 'x',
-          backgroundColor: ''
+          backgroundColor: '',
         },
         title: {
           text: 'Top Customer Product Purchases',
@@ -68,9 +68,9 @@ export default class StackedProductBarChart extends Component<HighchartsReact.Pr
     const baseProductData: ProductCounts[] = generateProductData();
     const categories: Set<string> = new Set<string>();
     const series: Highcharts.SeriesBarOptions[] = [
-      { name: 'Anvil', type: 'bar', color:'#66c2a5', data: [] },
-      { name: 'Giant Rubber Band', type: 'bar', color: '#8da0cb', data: [] },
-      { name: 'Super Giant Rubber Band', type: 'bar', color: '#e78ac3', data: [] },];
+      { name: 'Anvil', type: 'bar', color:'#66c2a5', events: { click: this.props.handleDataPointClick }, data: [] },
+      { name: 'Giant Rubber Band', type: 'bar', color: '#8da0cb', events: { click: this.props.handleDataPointClick }, data: [] },
+      { name: 'Super Giant Rubber Band', type: 'bar', color: '#e78ac3', events: { click: this.props.handleDataPointClick }, data: [] } ];
     
     for (const productDetail of baseProductData) {
       categories.add(productDetail.name);
@@ -81,6 +81,12 @@ export default class StackedProductBarChart extends Component<HighchartsReact.Pr
 
     return { categories: Array.from(categories), series: series };
 }
+
+/*private onDataPointClick(event: Highcharts.SeriesClickEventObject) {
+  if (this.props.handleDataPointClick) {
+    this.props.handleDataPointClick(event);
+  }
+}*/
 
   render() {
     const chartOptions: Highcharts.Options = this.state.chartOptions;

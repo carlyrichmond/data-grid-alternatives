@@ -9,6 +9,7 @@ import { Autocomplete, FormControl, InputLabel, MenuItem, OutlinedInput, Select,
 import { initializeDarkTheme } from '../../theme/MUIThemeInitialisation';
 import { CUSTOMERS, PRODUCTS } from '../../models/CustomerDataGenerator';
 import DataGrid from '../DataGrid/DataGrid.lazy';
+import { FilterSelection } from '../DataGrid/DataGrid';
 
 interface SameOldDataGridViewState {
   selectedFilters: {
@@ -59,6 +60,7 @@ export default class SameOldDataGridView extends Component<any, SameOldDataGridV
   render() {
 
     const dropdownDarkModeTheme: Theme = initializeDarkTheme();
+    const emptySelection: FilterSelection = { customerName: null, productCategory: null };
 
     return (
       <ThemeProvider theme={dropdownDarkModeTheme}>
@@ -99,7 +101,7 @@ export default class SameOldDataGridView extends Component<any, SameOldDataGridV
               </FormControl>
           </div>
           
-          <DataGrid/>           
+          <DataGrid { ...emptySelection } />           
         </div>
       </div>
       </ThemeProvider>
