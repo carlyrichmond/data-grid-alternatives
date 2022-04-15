@@ -6,18 +6,18 @@
     flex-flow: column;
 }
 
-h2, h3 {
+.product-chart-container > h2, h3 {
     text-align: center;
 }
 
-h2 {
+.product-chart-heading {
     font-size: 18;
     color: #e5e5e5;
     font-family: Open Sans;
     margin-bottom: 0.5rem;
 }
 
-h3 {
+.product-chart-subheading {
     color: #999999;
     font-family: Open Sans;
     margin: 0;

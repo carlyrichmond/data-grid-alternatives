@@ -60,7 +60,7 @@ export default class DataGrid extends Component<AgGridReactProps, DataGridState>
     return (         
           <div
             style={{
-              height: '70%',
+              height: '100%',
               width: '100%',
             }} className="ag-theme-balham-dark">
               <AgGridReact

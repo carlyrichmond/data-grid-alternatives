@@ -1,19 +1,19 @@
-.chart-panel {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    height: 30%
+.main-dashboard-panel {
+  display: grid;
+  grid-template-columns: [first] 65% [second] auto;
+  grid-template-rows: [top-row] 46% [bottom-row] auto;
+  row-gap: 3rem;
 }
 
-.row-panel {
-  width: 100%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
+.bar-chart-panel {
+    grid-column: 1;
+    grid-row: top-row;
 }
 
 .chord-diagram-container {
+  grid-column: 2;
+  grid-row: top-row;
+
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -21,11 +21,16 @@
   margin-top: 0;
 }
 
+.grid-panel {
+ grid-row: bottom-row;
+ grid-column: 1 / span 2;
+}
+
 .component-heading {
   color: #e5e5e5;
   margin: auto;
-}
-
-.details-heading {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: Open Sans;
+  text-transform: capitalize;
 }

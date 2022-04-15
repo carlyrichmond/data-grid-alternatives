@@ -26,8 +26,8 @@ export default class ProductColumnChart extends PureComponent<BaseChartProps, Ba
 
     return (
       <div className="product-chart-container">
-        <h2>W.E. Coyote</h2>
-        <h3>Net Count, January-July 2021</h3>
+        <h2 className="product-chart-heading">W.E. Coyote</h2>
+        <h3 className="product-chart-subheading">Net Count, January-July 2021</h3>
         <ResponsiveContainer minWidth={700} height={height}>
           <BarChart
             data={data}

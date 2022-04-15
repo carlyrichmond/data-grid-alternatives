@@ -35,54 +35,58 @@ function App() {
       <header>
         <DashboardHeader viewTitle={currentHeader}/>
       </header>
-      <main>
-        {// TODO Add scroll support on tab navigation
-        }
-        <ThemeProvider theme={tabDarkModeTheme}>
-          <TabContext value={value}>
-          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <TabList onChange={handleChange} aria-label="Visualisation Samples" centered>
-              <Tab icon={<FontAwesomeIcon icon={faBoxesStacked}/>} label="Sales Inventory" value="1"/>
-              <Tab icon={<FontAwesomeIcon icon={faUser}/>} label="Customer Statistics" value="2"/>
-              <Tab icon={<FontAwesomeIcon icon={faCreditCard}/>} label="Purchase History" value="3"/>
-              <Tab icon={<FontAwesomeIcon icon={faArrowTrendUp}/>}  label="Stock Price" value="4"/>
-              <Tab icon={<FontAwesomeIcon icon={faGifts}/>} label="Gift Cards Master" value="5"/>
-              <Tab icon={<FontAwesomeIcon icon={faPeopleArrowsLeftRight}/>} label="Gift Card Relationships" value="6"/>
-              <Tab icon={<FontAwesomeIcon icon={faCashRegister}/>} label="Analytics" value="7"/>
-              <Tab icon={<FontAwesomeIcon icon={faMapLocation}/>} label="Distribution" value="8"/>
-              <Tab icon={<FontAwesomeIcon icon={faMagnifyingGlassChart}/>} label="Dashboard" value="9"/>
-            </TabList>
-          </Box>
-          <TabPanel value="1">
-            <SameOldDataGridView/>
-          </TabPanel>
-          <TabPanel value="2">
-            <SummaryCardList/>
-          </TabPanel>
-          <TabPanel value="3">
-            <ProductColumnChart/>
-          </TabPanel>
-          <TabPanel value="4">
-            <TimeSeriesLineChart/>
-          </TabPanel>
-          <TabPanel value="5">
-            <GroupingCustomerGrid/>
-          </TabPanel>
-          <TabPanel value="6">
-            <GiftCardChordDiagram/>
-          </TabPanel>
-          <TabPanel value="7">
-            <PivotTable/>
-          </TabPanel>
-          <TabPanel value="8">
-            <BubbleMap/>
-          </TabPanel>
-          <TabPanel value="9">
-            <ChartDrilldown/>
-          </TabPanel>
-          </TabContext>
-        </ThemeProvider>
-      </main>
+      <ThemeProvider theme={tabDarkModeTheme}>
+        <TabContext value={value}>
+
+          <nav>
+            {// TODO Add scroll support on tab navigation
+            }
+            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+             <TabList onChange={handleChange} aria-label="Visualisation Samples" centered>
+               <Tab icon={<FontAwesomeIcon icon={faBoxesStacked}/>} label="Sales Inventory" value="1"/>
+               <Tab icon={<FontAwesomeIcon icon={faUser}/>} label="Customer Statistics" value="2"/>
+               <Tab icon={<FontAwesomeIcon icon={faCreditCard}/>} label="Purchase History" value="3"/>
+               <Tab icon={<FontAwesomeIcon icon={faArrowTrendUp}/>}  label="Stock Price" value="4"/>
+               <Tab icon={<FontAwesomeIcon icon={faGifts}/>} label="Gift Cards Master" value="5"/>
+               <Tab icon={<FontAwesomeIcon icon={faPeopleArrowsLeftRight}/>} label="Gift Card Relationships" value="6"/>
+               <Tab icon={<FontAwesomeIcon icon={faCashRegister}/>} label="Analytics" value="7"/>
+               <Tab icon={<FontAwesomeIcon icon={faMapLocation}/>} label="Distribution" value="8"/>
+               <Tab icon={<FontAwesomeIcon icon={faMagnifyingGlassChart}/>} label="Dashboard" value="9"/>
+             </TabList>
+            </Box>
+          </nav>
+
+          <main>
+            <TabPanel value="1">
+              <SameOldDataGridView/>
+            </TabPanel>
+            <TabPanel value="2">
+              <SummaryCardList/>
+            </TabPanel>
+            <TabPanel value="3">
+              <ProductColumnChart/>
+            </TabPanel>
+            <TabPanel value="4">
+              <TimeSeriesLineChart/>
+            </TabPanel>
+            <TabPanel value="5">
+              <GroupingCustomerGrid/>
+            </TabPanel>
+            <TabPanel value="6">
+              <GiftCardChordDiagram/>
+            </TabPanel>
+            <TabPanel value="7">
+              <PivotTable/>
+            </TabPanel>
+            <TabPanel value="8">
+              <BubbleMap/>
+            </TabPanel>
+            <TabPanel value="9">
+              <ChartDrilldown/>
+            </TabPanel>
+          </main>
+        </TabContext>
+      </ThemeProvider>
   </div>
   );
 }

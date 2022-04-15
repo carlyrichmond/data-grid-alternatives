@@ -20,16 +20,18 @@ export default class ChartDrilldown extends Component<any, ChartDrilldownState> 
 
   render() {
     return (
-      <div className="main-panel">
-        <div className="chart-panel">
+      <div className="main-dashboard-panel">
+        <div className="bar-chart-panel">
           <StackedProductBarChart/>
-          <div className="chord-diagram-container">
+        </div>
+
+        <div className="chord-diagram-container">
             <h3 className="component-heading">Gift Card Relationships</h3>
             <GiftCardChordDiagram {...this.baseChartProps}/>
           </div>
-        </div>
-        <div className="grid-panel" style={{width: '100%', height: '40vh'}}>
-          <h3 className="component-heading details-heading">Details</h3>
+        
+        <div className="grid-panel" style={{width: '100%', height: '33vh'}}>
+          <h3 className="component-heading">Details</h3>
           <DataGrid/>
         </div>
       </div>
