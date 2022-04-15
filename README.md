@@ -72,6 +72,42 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Here are some additional resources to help you learn more on your visualisation journey.
+
+### Inspiration
+
+1. [D3 Graph Gallery](https://d3-graph-gallery.com)
+2. [Data Sketches by Nadieh Bremer and Shirley Wu](https://www.datasketch.es/)
+3. [Information is Beautiful by David McCandless](https://informationisbeautiful.net/)
+
+### Libraries
+
+#### Components
+
+1. [MUI](https://mui.com/)- Material styled React components
+2. [Angular Material](https://material.angular.io/)- Material styled Angular components
+3. [Elastic UI](https://elastic.github.io/eui/#/)- UI framework of components and other features that are useful for emulating the Elastic experience. Especially useful if you want to provide a consistent experience with existing [Kibana](https://www.elastic.co/kibana/) dashboards.
+
+### Charts
+
+1. [Highcharts](https://www.highcharts.com/)
+2. [Recharts](https://recharts.org/)
+3. [Elastic Charts](https://elastic.github.io/eui/#/elastic-charts/creating-charts)
+4. [Nivo](https://nivo.rocks/)
+5. [D3.js](https://d3js.org/)
+
+### Maps
+
+1. [Leaflet.js](https://leafletjs.com/)
+2. [react-simple-maps](https://www.react-simple-maps.io/)
+
+### Grids
+
+1. [AG Grid](https://www.ag-grid.com/)
+2. [Elastic UI Tables](https://elastic.github.io/eui/#/tabular-content/tables)
+
+### React
+
+This project makes use of React. If you're new to React, you can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
