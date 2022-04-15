@@ -150,6 +150,15 @@ export default class GiftCardChordDiagram extends Component<BaseChartProps, Gift
                 ]
             }
         ]}
+        theme= {{
+          tooltip: {
+            container: {
+              background: "#32393c",
+              color: "#e5e5e5",
+              fontSize: 12
+            }
+          }
+        }}
     />
      </div>
     );
