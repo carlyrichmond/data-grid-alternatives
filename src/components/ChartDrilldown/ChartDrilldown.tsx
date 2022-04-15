@@ -17,9 +17,24 @@ export default class ChartDrilldown extends React.Component {
   }
 
   private updateFilterSelection(event: any) {
-    this.dataGridProps = {
-      customerName: null, productCategory: event.point.series.name
-    };
+    // Highcharts
+    if (event.point) {
+      this.dataGridProps = {
+        customerName: null, productCategory: event.point.series.name
+      };
+    } 
+    // Nivo Chord Ribbon
+    else if (event.source) {
+      this.dataGridProps = {
+        customerName: event.source.id, productCategory: 'Gift Card'
+      }
+    }
+    // Nivo Chord Arc (must come after Ribbon as id used as combined key)
+    else if (event.id) {
+      this.dataGridProps = {
+        customerName: event.id, productCategory: 'Gift Card'
+      }
+    } 
   }
 
   render() {

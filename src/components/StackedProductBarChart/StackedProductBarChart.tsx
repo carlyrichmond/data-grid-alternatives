@@ -82,12 +82,6 @@ export default class StackedProductBarChart extends Component<BaseChartProps, Hi
     return { categories: Array.from(categories), series: series };
 }
 
-/*private onDataPointClick(event: Highcharts.SeriesClickEventObject) {
-  if (this.props.handleDataPointClick) {
-    this.props.handleDataPointClick(event);
-  }
-}*/
-
   render() {
     const chartOptions: Highcharts.Options = this.state.chartOptions;
 

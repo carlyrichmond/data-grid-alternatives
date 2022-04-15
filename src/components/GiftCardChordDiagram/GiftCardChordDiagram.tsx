@@ -101,6 +101,8 @@ export default class GiftCardChordDiagram extends Component<BaseChartProps, Gift
                 ]
             ]
         }}
+        onArcClick={this.props.handleDataPointClick}
+        onRibbonClick={this.props.handleDataPointClick}
         activeRibbonOpacity={0.75}
         inactiveRibbonOpacity={0.25}
         ribbonBorderColor={{
