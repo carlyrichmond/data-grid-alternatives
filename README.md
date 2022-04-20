@@ -74,6 +74,15 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 Here are some additional resources to help you learn more on your visualisation journey.
 
+# Focus Research
+
+1. [Stolen Focus by Johann Hari](https://stolenfocusbook.com/)
+2. [Accelerating dynamics of collective attention](https://www.nature.com/articles/s41467-019-09311-w)
+3. [Can we trust the people who got us hooked on the internet to save us from it?](https://www.vox.com/the-goods/2019/4/25/18515981/google-tristan-harris-attention-economy-silicon-valley)
+4. [Future Shock by Alvin Toffler](https://www.goodreads.com/book/show/466537.Future_Shock)
+5. [The Managing of Organizations by Bertram M. Gross](https://www.cambridge.org/core/journals/american-political-science-review/article/abs/managing-of-organizations-by-bertram-m-gross-new-york-the-free-press-of-glencoe-1964-2-vols-pp-xxviii-971-2500/0A126A109557A7DA2E3A7862C8C319AD)
+6. [Shot & Chaser: #111 Are our attention spans getting shorter?](https://open.spotify.com/episode/6oxgbLRHLHYmGWTrheqPFm?si=832342961f78471e)
+
 ### Inspiration
 
 1. [D3 Graph Gallery](https://d3-graph-gallery.com)
