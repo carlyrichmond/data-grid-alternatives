@@ -44,7 +44,7 @@ export default class BubbleMap extends Component<any, BubbleMapState> {
       <div className="main-panel">
         <h2 className="map-headers">Order Delivery Volumes</h2>
         <h3 className="map-headers">Number of Orders Shipped per Month</h3>
-        <ComposableMap width={800} height={330}
+        <ComposableMap width={800} height={375}
         projection="geoAzimuthalEqualArea"
         projectionConfig={{
           rotate: [-20.0, -52.0, 0],

@@ -58,7 +58,7 @@ export default class PivotTable extends Component<AgGridReactProps, PivotTableSt
 
       <div className='pivot-container'>
 
-        <div style={{ width: '100%', height: '80vh' }}>
+        <div style={{ width: '100%', height: '85vh' }}>
           <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
             <div
               style={{

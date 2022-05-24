@@ -66,7 +66,7 @@ export default class SameOldDataGridView extends Component<any, SameOldDataGridV
 
     return (
       <ThemeProvider theme={dropdownDarkModeTheme}>
-      <div className="customer-dashboard-container" style={{ width: '100%', height: '80vh' }}>
+      <div className="customer-dashboard-container" style={{ width: '100%', height: '87vh' }}>
         
         <div
           style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>

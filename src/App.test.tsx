@@ -2,8 +2,14 @@ import React from 'react';
 import {render, screen} from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders portal headers and navigation', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const portalHeader = screen.getByText(/Sales Portal/i);
+  expect(portalHeader).toBeInTheDocument();
+
+  const companyName = screen.getByText(/ACME/i);
+  expect(companyName).toBeInTheDocument();
+
+  /*const headers = screen.getAllByRole(/tab/i);
+  expect(headers.length).toBe(8)*/
 });
