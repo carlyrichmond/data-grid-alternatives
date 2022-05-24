@@ -32,7 +32,7 @@ export default class SummaryCard extends React.Component<SummaryCardProps, any> 
 
     return (
       <ThemeProvider theme={darkModeTheme}>
-        <Card className="card" sx={{ width: 895, display: 'flex' }}>
+        <Card className="card" data-testid="SummaryCard" sx={{ width: 895, display: 'flex' }}>
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <SummaryCardChart/>
       </Box>

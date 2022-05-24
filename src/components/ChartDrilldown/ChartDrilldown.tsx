@@ -44,16 +44,16 @@ export default class ChartDrilldown extends React.Component<any, ChartDrilldownS
   render() {
     return (
       <div className="main-dashboard-panel">
-        <div className="bar-chart-panel">
+        <div data-testid="DashboardBarChart" className="bar-chart-panel">
           <StackedProductBarChart {...this.state.chartSettings}/>
         </div>
 
-        <div className="chord-diagram-container">
+        <div data-testid="DashboardChordDiagram"  className="chord-diagram-container">
             <h3 className="component-heading">Gift Card Relationships</h3>
             <GiftCardChordDiagram {...this.state.chartSettings}/>
           </div>
         
-        <div className="grid-panel" style={{width: '100%', height: '33vh'}}>
+        <div data-testid="DashboardGrid" className="grid-panel" style={{width: '100%', height: '33vh'}}>
           <h3 className="component-heading">Details</h3>
           <DataGrid {...this.state.dataGridSettings}/>
         </div>

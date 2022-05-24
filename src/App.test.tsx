@@ -10,6 +10,6 @@ test('renders portal headers and navigation', () => {
   const companyName = screen.getByText(/ACME/i);
   expect(companyName).toBeInTheDocument();
 
-  /*const headers = screen.getAllByRole(/tab/i);
-  expect(headers.length).toBe(8)*/
+  const headers = screen.getAllByRole('tab');
+  expect(headers).toHaveLength(9);
 });

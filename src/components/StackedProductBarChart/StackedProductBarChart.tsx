@@ -86,7 +86,7 @@ export default class StackedProductBarChart extends Component<BaseChartProps, Hi
     const chartOptions: Highcharts.Options = this.state.chartOptions;
 
     return (
-      <div>
+      <div data-testid="StackedProductBarChart">
         <HighchartsReact
           highcharts={Highcharts}
           options={chartOptions}

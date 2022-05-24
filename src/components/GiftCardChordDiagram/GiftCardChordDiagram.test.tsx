@@ -4,11 +4,10 @@ import '@testing-library/jest-dom/extend-expect';
 import GiftCardChordDiagram from './GiftCardChordDiagram';
 
 describe('<GiftCardChordDiagram />', () => {
-  test('it should mount', () => {
+  test('it should render the chord diagram', () => {
     render(<GiftCardChordDiagram />);
     
-    const giftCardChordDiagram = screen.getByTestId('GiftCardChordDiagram');
-
-    expect(giftCardChordDiagram).toBeInTheDocument();
+    const giftCardChordDiagramRibbon = screen.getByTestId('GiftCardChordDiagram');
+    expect(giftCardChordDiagramRibbon).toBeInTheDocument();
   });
 });

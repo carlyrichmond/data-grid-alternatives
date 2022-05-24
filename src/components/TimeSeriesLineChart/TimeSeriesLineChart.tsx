@@ -112,7 +112,7 @@ export default class TimeSeriesLineChart extends Component<HighchartsReact.Props
     const chartOptions: Highcharts.Options = this.state.chartOptions;
 
     return (
-      <div>
+      <div data-testid="TimeSeriesLineChart">
         <HighchartsReact
           highcharts={Highcharts}
           options={chartOptions}

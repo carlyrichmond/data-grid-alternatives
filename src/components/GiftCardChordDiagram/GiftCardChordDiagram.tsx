@@ -80,7 +80,7 @@ export default class GiftCardChordDiagram extends Component<BaseChartProps, Gift
   render() {
 
     return (
-     <div className={this.props.isDashboardChild ? "small-diagram-container" : "full-page-diagram-container"}>
+     <div data-testid='GiftCardChordDiagram' className={this.props.isDashboardChild ? "small-diagram-container" : "full-page-diagram-container"}>
 
        <ResponsiveChord
         data={this.state.data}

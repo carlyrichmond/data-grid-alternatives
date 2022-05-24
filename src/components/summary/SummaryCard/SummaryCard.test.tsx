@@ -5,7 +5,7 @@ import SummaryCard from './SummaryCard';
 import { CustomerSummary } from '../../../models/CustomerModel';
 
 describe('<SummaryCard />', () => {
-  test('it should mount', () => {
+  test('it should render customer card', () => {
 
     const customer: CustomerSummary = {
       name: 'W. E. Coyote',
@@ -16,8 +16,10 @@ describe('<SummaryCard />', () => {
     render(<SummaryCard customer={customer}/>);
     
     const summaryCard = screen.getByTestId('SummaryCard');
-
     expect(summaryCard).toBeInTheDocument();
-    expect(customer.name).toBeInTheDocument();
+    
+    const customerNameElement = screen.getByText('W. E. Coyote');
+    expect(customerNameElement).toBeDefined();
+
   });
 });

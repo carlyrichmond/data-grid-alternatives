@@ -76,6 +76,7 @@ export default class SameOldDataGridView extends Component<any, SameOldDataGridV
               <Autocomplete sx={{ m: 1, width: 400 }}
               {...this.customerAutocompleteSettings}
               id="auto-complete"
+              data-testid="Autocomplete"
               value={this.state.selectedFilters.selectedCustomers}
               autoComplete
               includeInputInList
@@ -87,6 +88,7 @@ export default class SameOldDataGridView extends Component<any, SameOldDataGridV
                 <Select
                   labelId="product-multiselect-label"
                   id="product-multiselect"
+                  data-testid="SelectControl"
                   multiple
                   value={this.state.selectedFilters.selectedProducts}
                   onChange={this.handleProductMultiselectChange}

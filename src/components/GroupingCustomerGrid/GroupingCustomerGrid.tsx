@@ -130,7 +130,8 @@ export default class GroupingCustomerGrid extends Component<AgGridReactProps, Gr
               height: '70%',
               width: '90%',
             }}
-            className="ag-theme-balham-dark">
+            className="ag-theme-balham-dark"
+            data-testid="GroupingGridContainer">
             <AgGridReact
               columnDefs={this.state.gridSettings.columnDefs}
               defaultColDef={this.state.gridSettings.defaultColDef}

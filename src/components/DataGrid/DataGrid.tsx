@@ -100,7 +100,7 @@ export default class DataGrid extends React.Component<FilterSelection, DataGridS
             style={{
               height: '100%',
               width: '100%',
-            }} className="ag-theme-balham-dark">
+            }} className="ag-theme-balham-dark" data-testid="GridContainer">
               <AgGridReact
                 columnDefs={this.state.gridSettings.columnDefs}
                 defaultColDef={this.state.gridSettings.defaultColDef}
