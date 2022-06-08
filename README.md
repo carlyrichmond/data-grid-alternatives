@@ -15,7 +15,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Each example is accessible via a set of Elastic UI tabs. At time of writing this repository contains the following examples:
 
-1. Sample data grid with toolbar: a typical example of grid-based dashboards from my time working in banking. [AG Grid](https://www.ag-grid.com/) is the focus point control, and in this example we make use of custom formatters and cell renderers to make use of advanced capabilities. [MUI](https://mui.com/) Autocomplete and Select controls, both supporting multi-select, are also presented.
+1. Sample data grid with toolbar: a typical example of grid-based dashboards from my time working in banking. [AG Grid](https://www.ag-grid.com/) is the focus point control, and in this example we make use of custom formatters and cell renderers to make use of advanced capabilities. [Elastic UI](https://elastic.github.io/) Single Select ComboBox, Single Select and Switch controls, are also presented.
 2. Time Series Line Chart: a simple line chart utilising [Highcharts](https://www.highcharts.com/)
 3. Product Bar Chart: a bar chart showing single category and stackable configurations using [Recharts](https://recharts.org/).
 4. Summary Cards: a simple card showcasing the ability to combine visualisations with summary statistics. The line chart utilizes [Recharts](https://recharts.org/). While cards can be implemented using basic CSS and HTML, in this case I've chosen to highlight the component library [MUI](https://mui.com/) to promote reusable component libraries.
