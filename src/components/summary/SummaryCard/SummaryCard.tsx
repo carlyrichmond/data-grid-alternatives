@@ -1,13 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './SummaryCard.css';
-import { render } from 'react-dom';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import { Theme, ThemeProvider } from '@mui/material/styles';
+import { EuiCard, EuiText } from '@elastic/eui'
 import { CustomerSummary } from '../../../models/CustomerModel';
-import { initializeDarkTheme } from '../../../theme/MUIThemeInitialisation';
 import SummaryCardChart from '../SummaryCardChart/SummaryCardChart.lazy';
 import { formatBalance, formatCounts } from '../../../utils/Formatters';
 
@@ -15,7 +9,7 @@ interface SummaryCardProps {
   customer: CustomerSummary;
 }
 
-export default class SummaryCard extends React.Component<SummaryCardProps, any> {
+export default class SummaryCard extends React.Component<SummaryCardProps, Record<string, never>> {
   
   constructor(props: SummaryCardProps) {
     super(props);
@@ -23,40 +17,23 @@ export default class SummaryCard extends React.Component<SummaryCardProps, any> 
 
   render() 
   {
-    const darkModeTheme: Theme = initializeDarkTheme();
-    darkModeTheme.palette.text = {
-      primary: '#cecece',
-      secondary: '#2B86C5',
-      disabled: '#e5e5e5'
-    };
-
     return (
-      <ThemeProvider theme={darkModeTheme}>
-        <Card className="card" sx={{ width: 895, display: 'flex' }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-        <SummaryCardChart/>
-      </Box>
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-        <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography component="div" variant="h5" color="text.primary">
-            {this.props.customer.name}
-          </Typography>
-          <Typography
-            variant="h6"
-            color="text.secondary"
-            component="div">
-            {formatBalance(this.props.customer.net_purchases_gbp)} <span className="descriptor">purchased</span>
-          </Typography>
-          <Typography
-            variant="h6"
-            color="text.secondary"
-            component="div">
-            {formatCounts(this.props.customer.item_purchase_count)} <span className="descriptor">items purchased to date</span>
-          </Typography>
-        </CardContent>
-      </Box>
-        </Card>
-    </ThemeProvider>
+      <EuiCard
+      className='card' 
+      data-testid='SummaryCard'
+      textAlign='left'
+      title={this.props.customer.name}
+      description='Joined January 2022'>
+        <div className='card-content'>
+          <SummaryCardChart/>
+          <EuiText size='relative'>
+            <ul>
+              <li><label>{formatBalance(this.props.customer.net_purchases_gbp)}</label> <span className="descriptor">purchased</span></li>
+              <li><label>{formatCounts(this.props.customer.item_purchase_count)}</label> <span className="descriptor">items purchased to date</span></li>
+            </ul>
+          </EuiText>
+        </div>
+    </EuiCard>
     )
   }
 }

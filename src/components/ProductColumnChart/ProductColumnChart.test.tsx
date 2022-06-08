@@ -4,11 +4,10 @@ import '@testing-library/jest-dom/extend-expect';
 import ProductColumnChart from './ProductColumnChart';
 
 describe('<ProductColumnChart />', () => {
-  test('it should mount', () => {
+  test('it should render the column chart', () => {
     render(<ProductColumnChart/>);
     
-    const barChart = screen.getByTestId('ProductColumnChart');
-
-    expect(barChart).toBeInTheDocument();
+    const customerLabel = screen.getByText('W.E. Coyote');
+    expect(customerLabel).toBeInTheDocument();
   });
 });

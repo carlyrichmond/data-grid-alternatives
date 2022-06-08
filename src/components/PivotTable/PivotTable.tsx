@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
+import React from 'react';
 import { AgGridReact, AgGridReactProps} from 'ag-grid-react';
 import { ColDef, ColumnApi, GridApi } from 'ag-grid-community';
 import 'ag-grid-enterprise';
@@ -16,7 +15,7 @@ interface PivotTableState {
 
 }
 
-export default class PivotTable extends Component<AgGridReactProps, PivotTableState> {
+export default class PivotTable extends React.Component<AgGridReactProps, PivotTableState> {
   private gridApi: GridApi | null = null;
   private gridColumnApi: ColumnApi | null = null;
 
@@ -56,17 +55,16 @@ export default class PivotTable extends Component<AgGridReactProps, PivotTableSt
   render() {
     return (
 
-      <div className='pivot-container'>
+      <div className='pivot-container' data-testid="PivotContainer">
 
-        <div style={{ width: '100%', height: '80vh' }}>
+        <div style={{ width: '100%', height: '85vh' }}>
           <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
             <div
               style={{
                 height: '100%',
                 width: '100%',
               }}
-              className="ag-theme-balham-dark"
-            >
+              className="ag-theme-balham-dark">
               <AgGridReact
                 columnDefs={this.state.columnDefs}
                 defaultColDef={this.state.defaultColDef}

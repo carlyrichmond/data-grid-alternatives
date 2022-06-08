@@ -22,7 +22,7 @@ export default class ProductColumnChart extends PureComponent<BaseChartProps, Ba
 
   render() {
     const data = this.state.data;
-    const height = this.props.isDashboardChild ? 200 : 600;
+    const height = this.props.isDashboardChild ? 200 : 680;
 
     return (
       <div className="product-chart-container">

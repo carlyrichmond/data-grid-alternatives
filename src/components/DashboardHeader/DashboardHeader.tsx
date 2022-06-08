@@ -1,3 +1,4 @@
+import { EuiPageHeader, EuiPageHeaderSection, EuiTitle } from '@elastic/eui';
 import { faArchway } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { FC } from 'react';
@@ -8,10 +9,21 @@ interface DashboardHeaderProps {
 }
 
 const DashboardHeader: FC<DashboardHeaderProps> = (props: DashboardHeaderProps) => (
-  <div className="app-header">
-    <h1>ACME <FontAwesomeIcon className="acme-icon" icon={faArchway}/></h1>
-    <h2>{props.viewTitle}</h2>
-  </div>
+  <EuiPageHeader data-testid="DashboardHeader" alignItems="center">
+    <EuiPageHeaderSection>
+      <EuiTitle className='app-header' size="l">
+         <h1>ACME <FontAwesomeIcon className="acme-icon" icon={faArchway}/></h1>
+      </EuiTitle>
+    </EuiPageHeaderSection>
+    <EuiPageHeaderSection>
+      <EuiTitle className='app-header' size="m">
+        <h2>{props.viewTitle}</h2>
+      </EuiTitle>
+    </EuiPageHeaderSection>
+    {/* Dummy section to force portal title to center */}
+    <EuiPageHeaderSection>
+    </EuiPageHeaderSection>
+  </EuiPageHeader>
 );
 
 export default DashboardHeader;

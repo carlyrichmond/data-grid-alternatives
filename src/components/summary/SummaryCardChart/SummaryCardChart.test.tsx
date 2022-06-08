@@ -4,11 +4,10 @@ import '@testing-library/jest-dom/extend-expect';
 import SummaryCardChart from './SummaryCardChart';
 
 describe('<SummaryCardChart />', () => {
-  test('it should mount', () => {
+  test('it should render a card', () => {
     render(<SummaryCardChart />);
     
-    const summaryCardChart = screen.getByTestId('SummaryCardChart');
-
-    expect(summaryCardChart).toBeInTheDocument();
+    const summaryCardLegendText = screen.getByText(/Number of Products/i);
+    expect(summaryCardLegendText).toBeInTheDocument();
   });
 });

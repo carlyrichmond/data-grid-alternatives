@@ -7,8 +7,10 @@ describe('<SameOldDataGrid />', () => {
   test('it should mount', () => {
     render(<SameOldDataGridView/>);
     
-    const sameOldDataGridView = screen.getByTestId('SameOldDataGridView');
+    const autocompleteControl = screen.getByTestId('Autocomplete');
+    expect(autocompleteControl).toBeInTheDocument();
 
-    expect(sameOldDataGridView).toBeInTheDocument();
+    const selectControl = screen.getByTestId('SelectControl');
+    expect(selectControl).toBeInTheDocument();
   });
 });

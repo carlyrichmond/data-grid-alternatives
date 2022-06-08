@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 import DashboardHeader from './DashboardHeader';
 
 describe('<DashboardHeader />', () => {
-  test('it should mount', () => {
+  test('it should render', () => {
     render(<DashboardHeader viewTitle='Sales Dashboard'/>);
     
     const dashboardHeader = screen.getByTestId('DashboardHeader');

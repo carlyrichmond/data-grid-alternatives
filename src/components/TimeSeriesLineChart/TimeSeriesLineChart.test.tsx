@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import TimeSeriesLineChart from './TimeSeriesLineChart';
@@ -7,7 +8,9 @@ describe('<TimeSeriesLineChart />', () => {
     render(<TimeSeriesLineChart />);
     
     const timeSeriesLineChart = screen.getByTestId('TimeSeriesLineChart');
-
     expect(timeSeriesLineChart).toBeInTheDocument();
+
+    const description = screen.getByText(/Created with Highcharts/i);
+    expect(description).toBeInTheDocument();
   });
 });

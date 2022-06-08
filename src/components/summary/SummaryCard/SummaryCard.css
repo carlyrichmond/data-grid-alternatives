@@ -1,17 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 .card {
     margin: 1em;
+    max-height: 340px;
+    width: 80%;
 }
 
-.MuiTypography-h5 {
-    font-family: Open Sans !important;
-    font-weight: bold
+.card-content {
+    display: flex;
+    flex-direction: row;
 }
 
-.MuiTypography-h6, .descriptor {
+.euiText > ul > li {
+    font-weight: bold;
+    list-style: none;
+
+    color: #2B86C5;
+}
+
+label {
     font-family: Roboto;
+    font-weight: bolder;
+    font-size: x-large;
 }
 
 .descriptor {

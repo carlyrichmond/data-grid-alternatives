@@ -7,15 +7,16 @@ body {
     background-color: #32393c;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    width: 90%;
+    align-items: baseline;
+    
+    width: 100%;
+    padding: 1rem;
 }
 
-.toolbar-component {
-    margin: 1rem 0 1rem 1rem !important;
+.euiComboBox {
+    margin-right: 1.5rem;
 }
 
-#auto-complete {
-    width: 20%;
-    height: 80%;
+.euiFormControlLayout {
+    margin-right: 1rem;
 }

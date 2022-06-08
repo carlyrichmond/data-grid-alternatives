@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './GiftCardChordDiagram.css';
 import { ResponsiveChord, RibbonTooltipComponentProps } from '@nivo/chord'
 import { TableTooltip, Chip } from '@nivo/tooltip'
-import { render } from 'react-dom';
 import { CUSTOMERS } from '../../models/CustomerDataGenerator';
 import { formatBalance } from '../../utils/Formatters';
 import { BaseChartProps } from '../../models/CommonChartModels';
@@ -11,7 +10,7 @@ interface GiftCardChordDiagramState {
   data: number[][]
 }
 
-export default class GiftCardChordDiagram extends Component<BaseChartProps, GiftCardChordDiagramState> {
+export default class GiftCardChordDiagram extends React.Component<BaseChartProps, GiftCardChordDiagramState> {
   constructor(props: BaseChartProps) {
     super(props);
 
@@ -80,7 +79,7 @@ export default class GiftCardChordDiagram extends Component<BaseChartProps, Gift
   render() {
 
     return (
-     <div className={this.props.isDashboardChild ? "small-diagram-container" : "full-page-diagram-container"}>
+     <div data-testid='GiftCardChordDiagram' className={this.props.isDashboardChild ? "small-diagram-container" : "full-page-diagram-container"}>
 
        <ResponsiveChord
         data={this.state.data}

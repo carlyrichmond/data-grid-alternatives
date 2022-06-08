@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
 import './BubbleMap.css';
 
@@ -14,7 +14,7 @@ interface BubbleMapState {
   markers: MarkerConfig[]
 } 
 
-export default class BubbleMap extends Component<any, BubbleMapState> {
+export default class BubbleMap extends React.Component<any, BubbleMapState> {
   constructor(props: any | Readonly<any>) {
     super(props);
 
@@ -41,10 +41,10 @@ export default class BubbleMap extends Component<any, BubbleMapState> {
 
   render() {
     return (
-      <div className="main-panel">
+      <div className="main-panel" data-testid="BubbleMap">
         <h2 className="map-headers">Order Delivery Volumes</h2>
         <h3 className="map-headers">Number of Orders Shipped per Month</h3>
-        <ComposableMap width={800} height={330}
+        <ComposableMap width={800} height={375}
         projection="geoAzimuthalEqualArea"
         projectionConfig={{
           rotate: [-20.0, -52.0, 0],

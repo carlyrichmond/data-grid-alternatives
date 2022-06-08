@@ -7,8 +7,13 @@ describe('<ChartDrilldown />', () => {
   test('it should mount', () => {
     render(<ChartDrilldown />);
     
-    const chartDrilldown = screen.getByTestId('ChartDrilldown');
+    const barChart = screen.getByTestId('DashboardBarChart');
+    expect(barChart).toBeInTheDocument();
 
-    expect(chartDrilldown).toBeInTheDocument();
+    const chordDiagram = screen.getByTestId('DashboardChordDiagram');
+    expect(chordDiagram).toBeInTheDocument();
+
+    const grid = screen.getByTestId('DashboardGrid');
+    expect(grid).toBeInTheDocument();
   });
 });

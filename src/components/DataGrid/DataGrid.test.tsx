@@ -9,8 +9,10 @@ describe('<DataGrid />', () => {
 
     render(<DataGrid { ...props }/>);
     
-    const dataGrid = screen.getByTestId('DataGrid');
-
+    const dataGrid = screen.getByTestId('GridContainer');
     expect(dataGrid).toBeInTheDocument();
+
+    const pivotTableCells = screen.getAllByRole('presentation');
+    expect(pivotTableCells.length).toBeGreaterThan(1);
   });
 });
