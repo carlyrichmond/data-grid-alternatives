@@ -5,6 +5,7 @@ This repository contains the accompanying examples for the talk *Oh No! Not Anot
 1. LJC Lightning Talks
 2. Front Endgineers Meetup
 3. Devoxx UK
+4. Ladies of Code Glasgow
 
 For any questions feel free to contact the author [via the handles listed on her GitHub profile](https://github.com/carlyrichmond).
 
@@ -12,7 +13,7 @@ For any questions feel free to contact the author [via the handles listed on her
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Primarily it makes use of React class components.
 
-At time of writing this repository contains the following examples:
+Each example is accessible via a set of Elastic UI tabs. At time of writing this repository contains the following examples:
 
 1. Sample data grid with toolbar: a typical example of grid-based dashboards from my time working in banking. [AG Grid](https://www.ag-grid.com/) is the focus point control, and in this example we make use of custom formatters and cell renderers to make use of advanced capabilities. [MUI](https://mui.com/) Autocomplete and Select controls, both supporting multi-select, are also presented.
 2. Time Series Line Chart: a simple line chart utilising [Highcharts](https://www.highcharts.com/)

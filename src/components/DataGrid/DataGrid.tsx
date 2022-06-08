@@ -11,8 +11,9 @@ import { CustomerPurchase, ProductType } from '../../models/CustomerModel';
 import { dateFormatter, productFormatter, shipmentStatusFormatter } from '../../utils/GridUtils';
 
 export interface FilterSelection {
-  customerName: string | null;
+  customerName: string | undefined;
   productCategory: ProductType | null;
+  showDeliveredOrders?: boolean;
 }
 
 export interface DataGridState {
@@ -34,12 +35,12 @@ export default class DataGrid extends React.Component<FilterSelection, DataGridS
     this.state = {
       gridSettings: {
         columnDefs: [
-          { field: 'customerName', headerName: "Customer Name" },
-          { field: 'date', headerName: "Placement Date", sort: 'desc', filter: 'date', valueFormatter: dateFormatter },
-          { field: 'orderId', headerName: "Order ID" },
-          { field: 'product', headerName: "Product", cellRenderer: productFormatter },
-          { field: 'orderStatus', headerName: "Status", cellRenderer: shipmentStatusFormatter },
-          { field: 'price', headerName: "Purchase Price (£)", filter: 'number' }
+          { field: 'customerName', headerName: 'Customer Name' },
+          { field: 'date', headerName: 'Placement Date', sort: 'desc', filter: 'date', valueFormatter: dateFormatter },
+          { field: 'orderId', headerName: 'Order ID' },
+          { field: 'product', headerName: 'Product', cellRenderer: productFormatter },
+          { field: 'orderStatus', headerName: 'Status', cellRenderer: shipmentStatusFormatter },
+          { field: 'price', headerName: 'Purchase Price (£)', filter: 'number' }
           ],
         defaultColDef: {
           flex: 1,

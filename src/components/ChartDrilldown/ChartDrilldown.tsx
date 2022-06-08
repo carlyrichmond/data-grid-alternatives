@@ -23,7 +23,7 @@ export default class ChartDrilldown extends React.Component<any, ChartDrilldownS
   }
 
   private updateFilterSelection(event: any) {
-    const filterSelection: FilterSelection = { customerName: null, productCategory: 'Gift Card' }
+    const filterSelection: FilterSelection = { customerName: undefined, productCategory: 'Gift Card' }
     // Highcharts
     if (event.point) {
      filterSelection.productCategory = event.point.series.name
