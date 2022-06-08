@@ -4,7 +4,6 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham-dark.css';
 import './SameOldDataGridView.css';
 import { EuiSelect, EuiSelectOption, EuiComboBox, EuiComboBoxOptionOption, EuiSwitch } from '@elastic/eui';
-import { Autocomplete, FormControl, InputLabel, MenuItem, OutlinedInput, Select, SelectChangeEvent, TextField, Theme, ThemeProvider } from '@mui/material';
 import { CUSTOMERS, PRODUCTS } from '../../models/CustomerDataGenerator';
 import DataGrid from '../DataGrid/DataGrid.lazy';
 import { FilterSelection } from '../DataGrid/DataGrid';
@@ -40,19 +39,6 @@ export default class SameOldDataGridView extends Component<Record<string, never>
         productCategory: null
       }      
     };
-  }
-
-  private handleProductMultiselectChange(event: SelectChangeEvent<typeof this.state.selectedFilters>) {
-    const {
-      target: { value },
-    } = event;
-    const newState: SameOldDataGridViewState = this.state;
-    //newState.selectedFilters.selectedProducts = value === 'string' ? value.split(',') : [value] as string[];
-    //this.setState(newState);
-  }
-
-  private getCustomerSelectionInputValue(value: any) {
-    //this.setState({ selectedFilters: { customerName: null, productCategory: null } });
   }
 
   render() {

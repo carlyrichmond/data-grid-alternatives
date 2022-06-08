@@ -15,7 +15,7 @@ interface SummaryCardProps {
   customer: CustomerSummary;
 }
 
-export default class SummaryCard extends React.Component<SummaryCardProps, any> {
+export default class SummaryCard extends React.Component<SummaryCardProps, Record<string, never>> {
   
   constructor(props: SummaryCardProps) {
     super(props);
