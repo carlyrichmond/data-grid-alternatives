@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
+import React from 'react';
 import { AgGridReact, AgGridReactProps} from 'ag-grid-react';
 import { ColDef, ColumnApi, GridApi } from 'ag-grid-community';
 import 'ag-grid-enterprise';
@@ -16,7 +15,7 @@ interface PivotTableState {
 
 }
 
-export default class PivotTable extends Component<AgGridReactProps, PivotTableState> {
+export default class PivotTable extends React.Component<AgGridReactProps, PivotTableState> {
   private gridApi: GridApi | null = null;
   private gridColumnApi: ColumnApi | null = null;
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import 'ag-grid-enterprise';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham-dark.css';
@@ -13,7 +13,7 @@ interface SameOldDataGridViewState {
   selectedFilters: FilterSelection;
 }
 
-export default class SameOldDataGridView extends Component<Record<string, never>, SameOldDataGridViewState> {
+export default class SameOldDataGridView extends React.Component<Record<string, never>, SameOldDataGridViewState> {
   
   private customerAutocompleteSettings = {
     options: CUSTOMERS,

@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
+import React from 'react';
 import Highcharts from 'highcharts';
 import DarkUnica from 'highcharts/themes/dark-unica'
 import HighchartsReact from 'highcharts-react-official';
@@ -8,7 +7,7 @@ import { HighchartsChartState } from '../../models/CommonChartModels';
 
 DarkUnica(Highcharts);
 
-export default class TimeSeriesLineChart extends Component<HighchartsReact.Props, HighchartsChartState> {
+export default class TimeSeriesLineChart extends React.Component<HighchartsReact.Props, HighchartsChartState> {
   constructor(props: HighchartsReact.Props) {
     super(props);
 

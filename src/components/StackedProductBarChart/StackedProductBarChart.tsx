@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import DarkUnica from 'highcharts/themes/dark-unica'
@@ -9,7 +9,7 @@ import './StackedProductBarChart.css';
 
 DarkUnica(Highcharts);
 
-export default class StackedProductBarChart extends Component<BaseChartProps, HighchartsChartState> {
+export default class StackedProductBarChart extends React.Component<BaseChartProps, HighchartsChartState> {
   constructor(props: BaseChartProps) {
     super(props);
 

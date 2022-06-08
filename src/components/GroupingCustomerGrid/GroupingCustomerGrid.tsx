@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
+import React from 'react';
 import { AgGridReact, AgGridReactProps} from 'ag-grid-react';
-import { ColDef, ColumnApi, GridApi, ICellRendererParams } from 'ag-grid-community';
+import { ColDef, ColumnApi, GridApi } from 'ag-grid-community';
 import 'ag-grid-enterprise';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham-dark.css';
 import './GroupingCustomerGrid.css';
-import { Autocomplete, FormControl, InputLabel, MenuItem, OutlinedInput, Select, SelectChangeEvent, TextField, Theme, ThemeProvider } from '@mui/material';
-import { initializeDarkTheme } from '../../theme/MUIThemeInitialisation';
+import { Autocomplete, createTheme, FormControl, InputLabel, MenuItem, OutlinedInput, Select, TextField, Theme, ThemeProvider } from '@mui/material';
 import { CUSTOMERS, generateCustomerPurchaseHistory, PRODUCTS } from '../../models/CustomerDataGenerator';
 import { CustomerPurchase, ProductType } from '../../models/CustomerModel';
 import { dateFormatter, productFormatter, shipmentStatusFormatter } from '../../utils/GridUtils';
@@ -24,7 +22,7 @@ interface GroupingCustomerGridState {
   }
 }
 
-export default class GroupingCustomerGrid extends Component<AgGridReactProps, GroupingCustomerGridState> {
+export default class GroupingCustomerGrid extends React.Component<AgGridReactProps, GroupingCustomerGridState> {
   private gridApi: GridApi | null = null;
   private gridColumnApi: ColumnApi | null = null;
   private customerAutocompleteSettings = {
@@ -85,7 +83,11 @@ export default class GroupingCustomerGrid extends Component<AgGridReactProps, Gr
 
   render() {
 
-    const dropdownDarkModeTheme: Theme = initializeDarkTheme();
+    const dropdownDarkModeTheme: Theme = createTheme({
+      palette: {
+        mode: 'dark'
+      },
+    });
 
     return (
       <ThemeProvider theme={dropdownDarkModeTheme}>

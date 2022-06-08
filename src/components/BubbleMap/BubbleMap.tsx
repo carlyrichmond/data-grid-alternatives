@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
 import './BubbleMap.css';
 
@@ -14,7 +14,7 @@ interface BubbleMapState {
   markers: MarkerConfig[]
 } 
 
-export default class BubbleMap extends Component<any, BubbleMapState> {
+export default class BubbleMap extends React.Component<any, BubbleMapState> {
   constructor(props: any | Readonly<any>) {
     super(props);
 
