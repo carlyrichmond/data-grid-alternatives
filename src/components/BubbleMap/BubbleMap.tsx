@@ -42,7 +42,7 @@ export default class BubbleMap extends React.Component<any, BubbleMapState> {
   render() {
     return (
       <div className="main-panel" data-testid="BubbleMap">
-        <h2 className="map-headers">Order Delivery Volumes</h2>
+        <h2 className="map-headers distribution-title">Order Delivery Volumes</h2>
         <h3 className="map-headers">Number of Orders Shipped per Month</h3>
         <ComposableMap width={800} height={375}
         projection="geoAzimuthalEqualArea"

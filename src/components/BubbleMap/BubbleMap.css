@@ -8,6 +8,13 @@
     margin-top: 0;
 }
 
+.distribution-title {
+    font-size: 20px;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
 h3 {
     color: #898989;
+    margin-bottom: 0.5rem;
 }
