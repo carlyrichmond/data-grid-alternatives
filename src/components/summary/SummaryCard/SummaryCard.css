@@ -2,6 +2,7 @@
 
 .card {
     margin: 1em;
+    max-width: 910px;
     max-height: 340px;
     width: 80%;
 }
