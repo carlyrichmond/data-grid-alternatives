@@ -57,13 +57,13 @@ export default class BubbleMap extends React.Component<any, BubbleMapState> {
           </Geographies>
           {this.state.markers.map(({ name, coordinates, fulfilledPurchaseCount }) => (
           <Marker key={name} coordinates={coordinates}>
-            <circle r={fulfilledPurchaseCount/4} fill='#FF3CAC' stroke='#FF3CAC' strokeWidth={2}/>
+            <circle r={fulfilledPurchaseCount/4} fill='#F68FBE' stroke='#F68FBE' strokeWidth={2}/>
             <text y={0} textAnchor='middle' stroke='#5D5A6D' strokeWidth='0.5px' dy='.3em'
             style={{ fontFamily: 'Roboto', fontSize: '0.6em' }}>{fulfilledPurchaseCount}</text>
             <text
               textAnchor='middle'
               y={-(fulfilledPurchaseCount/4) + this.state.markerOffset}
-              style={{ fontFamily: 'Open Sans', fontSize: '0.65em', fill: '#2B86C5' }}>
+              style={{ fontFamily: 'Open Sans', fontSize: '0.65em', fill: '#36A2EF' }}>
               {name}
             </text>
           </Marker>

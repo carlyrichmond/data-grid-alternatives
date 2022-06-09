@@ -60,9 +60,9 @@ export default class TimeSeriesLineChart extends React.Component<HighchartsReact
                       y2: 1
                   },
                   stops: [
-                      [0, '#FF3CAC'],
+                      [0, '#F68FBE'],
                       [1, '#784BA0'],
-                      [2, '#2B86C5']
+                      [2, '#36A2EF']
                   ]
               },
               marker: {
