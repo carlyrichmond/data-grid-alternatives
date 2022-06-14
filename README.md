@@ -15,15 +15,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Each example is accessible via a set of Elastic UI tabs. At time of writing this repository contains the following examples:
 
-1. Sample data grid with toolbar: a typical example of grid-based dashboards from my time working in banking. [AG Grid](https://www.ag-grid.com/) is the focus point control, and in this example we make use of custom formatters and cell renderers to make use of advanced capabilities. [Elastic UI](https://elastic.github.io/) Single Select ComboBox, Single Select and Switch controls, are also presented.
-2. Time Series Line Chart: a simple line chart utilising [Highcharts](https://www.highcharts.com/)
-3. Product Bar Chart: a bar chart showing single category and stackable configurations using [Recharts](https://recharts.org/).
-4. Summary Cards: a simple card showcasing the ability to combine visualisations with summary statistics. The line chart utilizes [Recharts](https://recharts.org/). While cards can be implemented using basic CSS and HTML, in this case I've chosen to highlight the component library [MUI](https://mui.com/) to promote reusable component libraries.
-5. Grouping Data Grid: again using [AG Grid](https://www.ag-grid.com/), I show you how row grouping can be used to transform relationship related data, in this case gift card purchaser and recipient, using grouping. A similar effect for subdetails can also be achieved using the [Master/ Detail capabilities](ag-grid.com/react-data-grid/master-detail/) of many data grids, including [AG Grid](https://www.ag-grid.com/). Rather than use the [Elastic UI](https://elastic.github.io/) form controls showcased in the sample data grid example, I've showcased the Autocomplete and Select controls from [MUI](https://mui.com/) to promote reusable alternative component libraries to Elastic UI, bearing in mind that developers may need to adhere to alternative UX themes such as Material.
-6. Bubble Map: although bubble charts can be used against traditional axes, they are also great against maps, such as the example included here. [Leaflet.js](https://leafletjs.com/) is a great Map library to call out, which also has a React wrapper. However, this example uses [react-simple-maps](https://www.react-simple-maps.io/) with a custom SVG marker for the data points.
-7. Gift Card Chord Diagram: [Chord](https://d3-graph-gallery.com/chord), [Sankey](https://d3-graph-gallery.com/sankey) or [Network] (https://d3-graph-gallery.com/network.html) diagrams are great options for showcasing flow dependencies within networks. Chord diagrams work well for single 1-1 relationships. Meanwhile Sankey and Network diagrams can show more complicated network flows or multi-level dependencies. [D3.js](https://d3js.org/) is a great library for generating complex visualisations such as these, and the site does provide many examples. However, it has a steep learning curve making time to market for controls initially challenging. [Highcharts](https://www.highcharts.com/) is a great framework agnostic option, but for this diagram I have used [Nivo](https://nivo.rocks/) which is an incredibly powerful charting library for Reach that has loads of complex chart options.
-8. Pivot Table: a simple implementation of [AG Grid](https://www.ag-grid.com/), making use of their [pivot capabilities](https://www.ag-grid.com/react-data-grid/pivoting/). Pivot controls are useful for open exploration over existing data sets. Note that pivoting is an enterprise feature, which requires a license. The control is used in evaluation mode using some of AG Grid's own sample medal data.
-9. Chart With Data Grid Drilldown: powerful dashboards often contain a mixture of charts and grids. Many libraries also provide click event support for chart data points, which can then be used to filter the underlying data grid. This example shows the click event triggers exposed by [Highcharts](https://www.highcharts.com/) and [Nivo](https://nivo.rocks/), and how these events can be applied to [AG Grid](https://www.ag-grid.com/) programmatically using the native filtering API. Note in this case the use of React lifecycle events to propagate the values. Depending on your framework of choice you may need to employ a different technique.
+1. [Sample data grid with toolbar](./src/components/SameOldDataGridView/README.md): a typical example of grid-based dashboards from my time working in banking.
+2. [Time Series Line Chart](./src/components/TimeSeriesLineChart/README.md): a simple line chart utilising [Highcharts](https://www.highcharts.com/).
+3. [Product Bar Chart](./src/components/ProductColumnChart/README.md): a bar chart showing single category and stackable configurations using [Recharts](https://recharts.org/).
+4. [Summary Cards](./src/components/summary/README.md): a simple card showcasing the ability to combine visualisations with summary statistics.
+5. [Grouping Data Grid](./src/components/GroupingCustomerGrid/README.md): using row groupings to help summarise grid entries via grouping or showcase relationships in tabular data.
+6. [Bubble Map](./src/components/BubbleMap/README.md): a great example of using maps to showcase data with location information.
+7. [Gift Card Chord Diagram](./src/components/GiftCardChordDiagram/README.md): a great visualisation to showcase relationships between entities.
+8. [Pivot Table](./src/components/PivotTable/README.md): a simple implementation of [AG Grid](https://www.ag-grid.com/), making use of their [pivot capabilities](https://www.ag-grid.com/react-data-grid/pivoting/).
+9. [Chart With Data Grid Drilldown](./src/components/ChartDrilldown/README.md): an example combining data visualisations and a grid with more detailed data.
 
 ## Getting Started
 
@@ -92,6 +92,8 @@ Here are some additional resources to help you learn more on your visualisation 
 
 ### Libraries
 
+If you are looking to get started or learn more about data visualisation best practices, do check out the below resources. Not all libraries have been used within the examples in this repo, but are presented to give you options for a variety of use cases and organisations.
+
 #### Components
 
 1. [MUI](https://mui.com/)- Material styled React components
@@ -113,8 +115,9 @@ Here are some additional resources to help you learn more on your visualisation 
 
 ### Grids
 
-1. [AG Grid](https://www.ag-grid.com/)
+1. [AG Grid](https://www.ag-grid.com/)- note that some features require an enterprise license
 2. [Elastic UI Tables](https://elastic.github.io/eui/#/tabular-content/tables)
+3. [PivotTable.js](https://pivottable.js.org/examples/)- a potential open source alternative
 
 ### React
 
