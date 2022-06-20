@@ -8,7 +8,6 @@ import { CUSTOMERS, PRODUCTS } from '../../models/CustomerDataGenerator';
 import DataGrid from '../DataGrid/DataGrid.lazy';
 import { FilterSelection } from '../DataGrid/DataGrid';
 import { ProductType } from '../../models/CustomerModel';
-import { withTransaction } from '@elastic/apm-rum-react';
 
 interface SameOldDataGridViewState {
   selectedFilters: FilterSelection;
