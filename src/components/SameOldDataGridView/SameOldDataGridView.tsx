@@ -8,12 +8,12 @@ import { CUSTOMERS, PRODUCTS } from '../../models/CustomerDataGenerator';
 import DataGrid from '../DataGrid/DataGrid.lazy';
 import { FilterSelection } from '../DataGrid/DataGrid';
 import { ProductType } from '../../models/CustomerModel';
+import { withTransaction } from '@elastic/apm-rum-react';
 
 interface SameOldDataGridViewState {
   selectedFilters: FilterSelection;
 }
-
-export default class SameOldDataGridView extends React.Component<Record<string, never>, SameOldDataGridViewState> {
+class SameOldDataGridView extends React.Component<Record<string, never>, SameOldDataGridViewState> {
   
   private customerAutocompleteSettings = {
     options: CUSTOMERS,
@@ -90,3 +90,6 @@ export default class SameOldDataGridView extends React.Component<Record<string, 
     );
   }
 }
+
+export default SameOldDataGridView;
+//export default withTransaction('SameOldDataGridView', 'component')(SameOldDataGridView);

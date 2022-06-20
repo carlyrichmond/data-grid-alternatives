@@ -1,9 +1,13 @@
 import React from 'react';
 import {render, screen} from '@testing-library/react';
 import App from './App';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 test('renders portal headers and navigation', () => {
-  render(<App />);
+  render(
+    <Router>
+      <App />
+    </Router>);
   const portalHeader = screen.getByText(/Sales Portal/i);
   expect(portalHeader).toBeInTheDocument();
 

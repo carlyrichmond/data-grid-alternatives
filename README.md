@@ -11,9 +11,9 @@ Do check out the [slides](./slides/Oh%20No!%20Not%20Another%20Data%20Grid!%20Sli
 
 ## Frameworks and Tools
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Primarily it makes use of React class components.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Primarily it makes use of React class components, with the main App and Header components showcasing functional components.
 
-Each example is accessible via a set of Elastic UI tabs. At time of writing this repository contains the following examples:
+Each example is accessible via a set of Elastic UI tabs which are mapped to the [React Router](https://reactrouter.com/docs/en/v6). At time of writing this repository contains the following examples:
 
 1. [Sample data grid with toolbar](./src/components/SameOldDataGridView/README.md): a typical example of grid-based dashboards from my time working in banking.
 2. [Time Series Line Chart](./src/components/TimeSeriesLineChart/README.md): a simple line chart utilising [Highcharts](https://www.highcharts.com/).

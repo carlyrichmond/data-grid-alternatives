@@ -34,5 +34,5 @@
   text-align: center;
   font-family: Open Sans;
   font-size: large;
-  text-transform: capitalize;
+  text-transform: capitalize !important;
 }

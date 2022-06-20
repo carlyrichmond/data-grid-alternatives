@@ -1,6 +1,6 @@
-.app-container {
-    background-color: #7798BF;
-    background-image: linear-gradient(225deg, #F68FBE 0%, #784BA0 50%, #36A2EF 90%);
+.main-app-header {
+    background-color: #36A2EF;
+    background-image: linear-gradient(225deg, #F68FBE 0%, #784BA0 60%);
 }
 
 [role="tabpanel"] {

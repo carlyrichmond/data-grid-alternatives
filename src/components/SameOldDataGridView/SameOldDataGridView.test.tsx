@@ -5,7 +5,8 @@ import SameOldDataGridView from './SameOldDataGridView';
 
 describe('<SameOldDataGrid />', () => {
   test('it should mount', () => {
-    render(<SameOldDataGridView/>);
+    render(
+      <SameOldDataGridView/>);
     
     const autocompleteControl = screen.getByTestId('Autocomplete');
     expect(autocompleteControl).toBeInTheDocument();
