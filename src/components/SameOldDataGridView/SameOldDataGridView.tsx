@@ -91,4 +91,3 @@ class SameOldDataGridView extends React.Component<Record<string, never>, SameOld
 }
 
 export default SameOldDataGridView;
-//export default withTransaction('SameOldDataGridView', 'component')(SameOldDataGridView);
