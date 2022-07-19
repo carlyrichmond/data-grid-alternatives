@@ -32,8 +32,9 @@ function App() {
 
   const apm = initApm({
     serviceName: 'data-grid-alternatives-ui',
-    serverUrl: 'http://localhost:3000/',
-    serviceVersion: '1'
+    serverUrl: 'https://e27b61b76ab2406a9da20520f384f88b.apm.eu-west-2.aws.cloud.es.io:443',
+    serviceVersion: '1',
+    environment: 'dev'
   });
 
   const selectedTab: string = useLocation().pathname.substring(1) || 'sales-inventory';
