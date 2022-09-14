@@ -6,6 +6,7 @@ This repository contains the accompanying examples for the talk *Oh No! Not Anot
 2. Front Endgineers Meetup
 3. Devoxx UK
 4. Ladies of Code Glasgow
+5. HalfStack on the Thames 2022 
 
 Do check out the [slides](./slides/Oh%20No!%20Not%20Another%20Data%20Grid!%20Slides.pdf) or the component READMEs for the accompanying screenshots. For any questions feel free to contact the author [via the handles listed on her GitHub profile](https://github.com/carlyrichmond).
 
