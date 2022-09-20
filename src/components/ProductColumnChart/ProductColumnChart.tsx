@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import { BarChart, CartesianGrid, Legend, Tooltip, XAxis, YAxis, Bar, ResponsiveContainer } from 'recharts';
 import { BaseChartProps } from '../../models/CommonChartModels';
 import { ProductCounts } from '../../models/CustomerModel';
-import { generateProductData } from '../../models/CustomerDataGenerator';
+import { generateProductData } from '../../models/DataGenerator';
 
 interface BarChartState {
   data: ProductCounts[];

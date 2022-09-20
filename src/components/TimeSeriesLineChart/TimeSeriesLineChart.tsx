@@ -4,6 +4,7 @@ import DarkUnica from 'highcharts/themes/dark-unica'
 import HighchartsReact from 'highcharts-react-official';
 import './TimeSeriesLineChart.css';
 import { HighchartsChartState } from '../../models/CommonChartModels';
+import { getTimeSeriesData } from '../../models/DataGenerator';
 
 DarkUnica(Highcharts);
 
@@ -85,27 +86,11 @@ export default class TimeSeriesLineChart extends React.Component<HighchartsReact
             enabled: false
           },
           name: 'Daily Close ($)',
-          data: this.getTimeSeriesData(seriesStartDate, seriesEndDate)
+          data: getTimeSeriesData(seriesStartDate, seriesEndDate)
         }]
       }
     };
   }
-
-  getTimeSeriesData(startDate: Date, endDate: Date): number[][] {
-    const MILLISECONDS_IN_DAY = 86400000;
-
-    const data: number[][] = [];
-    let currentDateInMilliseconds: number = startDate.getTime();
-    const endDateInMilliseconds: number = endDate.getTime();
-
-    while (currentDateInMilliseconds <= endDateInMilliseconds) {
-      const currentPosition: number = +(Math.random() * (180 - 165) + 165).toFixed(2);
-      data.push([currentDateInMilliseconds, currentPosition]);
-      currentDateInMilliseconds += MILLISECONDS_IN_DAY;
-    }
-
-    return data;
-}
 
   render() {
     const chartOptions: Highcharts.Options = this.state.chartOptions;

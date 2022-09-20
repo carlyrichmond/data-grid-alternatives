@@ -11,5 +11,5 @@ test('renders portal headers and navigation', () => {
   expect(companyName).toBeInTheDocument();
 
   const headers = screen.getAllByRole('tab');
-  expect(headers).toHaveLength(9);
+  expect(headers).toHaveLength(10);
 });

@@ -6,7 +6,7 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham-dark.css';
 import './GroupingCustomerGrid.css';
 import { Autocomplete, createTheme, FormControl, InputLabel, MenuItem, OutlinedInput, Select, TextField, Theme, ThemeProvider } from '@mui/material';
-import { CUSTOMERS, generateCustomerPurchaseHistory, PRODUCTS } from '../../models/CustomerDataGenerator';
+import { CUSTOMERS, generateCustomerPurchaseHistory, PRODUCTS } from '../../models/DataGenerator';
 import { CustomerPurchase, ProductType } from '../../models/CustomerModel';
 import { dateFormatter, productFormatter, shipmentStatusFormatter } from '../../utils/GridUtils';
 

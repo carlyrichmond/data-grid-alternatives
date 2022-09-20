@@ -1,0 +1,26 @@
+.product-time-series {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chart-header {
+    margin-top: 0;
+    font-size: large;
+}
+
+h2 {
+    color: #e5e5e5;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    color: #898989;
+    font-size: medium;
+    margin-bottom: 0.5rem;
+}
+
+.product-time-series-chart {
+    width: 80%;
+}

@@ -4,7 +4,7 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham-dark.css';
 import './SameOldDataGridView.css';
 import { EuiSelect, EuiSelectOption, EuiComboBox, EuiComboBoxOptionOption, EuiSwitch } from '@elastic/eui';
-import { CUSTOMERS, PRODUCTS } from '../../models/CustomerDataGenerator';
+import { CUSTOMERS, PRODUCTS } from '../../models/DataGenerator';
 import DataGrid from '../DataGrid/DataGrid.lazy';
 import { FilterSelection } from '../DataGrid/DataGrid';
 import { ProductType } from '../../models/CustomerModel';

@@ -5,4 +5,6 @@
 
 [role="tabpanel"] {
     background-color: #32393c;
+    width: 100%;
+    height: 75vh;
 }

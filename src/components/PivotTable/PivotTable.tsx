@@ -5,7 +5,7 @@ import 'ag-grid-enterprise';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham-dark.css';
 import { dateFormatter, productFormatter, shipmentStatusFormatter } from '../../utils/GridUtils';
-import { generateCustomerPurchaseHistory } from '../../models/CustomerDataGenerator';
+import { generateCustomerPurchaseHistory } from '../../models/DataGenerator';
 
 interface PivotTableState {
   columnDefs: ColDef[],
