@@ -32,8 +32,8 @@ export function ElasticTimeSeriesLineChart(){
 
   return (
     <div className='product-time-series' data-testid='ElasticTimeSeriesLineChart'>
-      <h2 className='chart-header'>Order Delivery Volumes</h2>
-      <h3 className='chart-header'>Number of Orders Shipped per Month</h3>
+      <h2 className='chart-header'>Order Purchase Volumes</h2>
+      <h3 className='chart-header'>Number of Orders Purchased per Hour</h3>
       <Chart className='product-time-series-chart' size={{height: '70vh', width: '90%'}}>
         <Settings
           theme={euiTheme}
@@ -75,6 +75,7 @@ export function ElasticTimeSeriesLineChart(){
           showGridLines
         />
         <Axis
+          title=""
           id="left-axis"
           position="left"
           showGridLines
