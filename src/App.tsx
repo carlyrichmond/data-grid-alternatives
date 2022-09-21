@@ -1,5 +1,5 @@
 import { EuiProvider, EuiTabbedContent } from '@elastic/eui';
-import { faArrowTrendDown, faArrowTrendUp, faBoxesStacked, faCashRegister, faCreditCard, faGifts, faMagnifyingGlassChart, faMapLocation, faPeopleArrowsLeftRight, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faArrowTrendUp, faBoxesStacked, faCashRegister, faChartArea, faCreditCard, faGifts, faMagnifyingGlassChart, faMapLocation, faPeopleArrowsLeftRight, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
@@ -79,7 +79,7 @@ function App() {
                 {
                   id: 'product-purchase-trend',
                   name: 'Product Trends',
-                  prepend: (<FontAwesomeIcon icon={faArrowTrendDown}/>),
+                  prepend: (<FontAwesomeIcon icon={faChartArea}/>),
                   content: (
                     <ElasticTimeSeriesLineChart/>
                   )
