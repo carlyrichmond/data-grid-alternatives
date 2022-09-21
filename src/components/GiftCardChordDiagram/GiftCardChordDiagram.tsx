@@ -2,7 +2,7 @@ import React from 'react';
 import './GiftCardChordDiagram.css';
 import { ResponsiveChord, RibbonTooltipComponentProps } from '@nivo/chord'
 import { TableTooltip, Chip } from '@nivo/tooltip'
-import { CUSTOMERS } from '../../models/CustomerDataGenerator';
+import { CUSTOMERS } from '../../models/DataGenerator';
 import { formatBalance } from '../../utils/Formatters';
 import { BaseChartProps } from '../../models/CommonChartModels';
 

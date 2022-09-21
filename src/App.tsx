@@ -1,5 +1,5 @@
 import { EuiProvider, EuiTabbedContent } from '@elastic/eui';
-import { faArrowTrendUp, faBoxesStacked, faCashRegister, faCreditCard, faGifts, faMagnifyingGlassChart, faMapLocation, faPeopleArrowsLeftRight, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faArrowTrendUp, faBoxesStacked, faCashRegister, faChartArea, faCreditCard, faGifts, faMagnifyingGlassChart, faMapLocation, faPeopleArrowsLeftRight, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
@@ -16,6 +16,7 @@ import ProductColumnChart from './components/ProductColumnChart/ProductColumnCha
 import SameOldDataGridView from './components/SameOldDataGridView/SameOldDataGridView.lazy';
 import SummaryCardList from './components/summary/SummaryCardList/SummaryCardList.lazy';
 import TimeSeriesLineChart from './components/TimeSeriesLineChart/TimeSeriesLineChart';
+import ElasticTimeSeriesLineChart from './components/ElasticTimeSeriesLineChart/ElasticTimeSeriesLineChart.lazy';
 
 /**
  * App showcases a series of data visualisations
@@ -73,6 +74,14 @@ function App() {
                   prepend: (<FontAwesomeIcon icon={faArrowTrendUp}/>),
                   content: (
                     <TimeSeriesLineChart/>
+                  )
+                },
+                {
+                  id: 'product-purchase-trend',
+                  name: 'Product Trends',
+                  prepend: (<FontAwesomeIcon icon={faChartArea}/>),
+                  content: (
+                    <ElasticTimeSeriesLineChart/>
                   )
                 },
                 {

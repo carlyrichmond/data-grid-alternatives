@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import { BarChart, CartesianGrid, Legend, Tooltip, XAxis, YAxis, Bar, ResponsiveContainer } from 'recharts';
 import { BaseChartProps } from '../../models/CommonChartModels';
 import { ProductCounts } from '../../models/CustomerModel';
-import { generateProductData } from '../../models/CustomerDataGenerator';
+import { generateProductData } from '../../models/DataGenerator';
 
 interface BarChartState {
   data: ProductCounts[];
@@ -22,13 +22,12 @@ export default class ProductColumnChart extends PureComponent<BaseChartProps, Ba
 
   render() {
     const data = this.state.data;
-    const height = this.props.isDashboardChild ? 200 : 785;
 
     return (
       <div className="product-chart-container">
         <h2 className="product-chart-heading">W.E. Coyote</h2>
         <h3 className="product-chart-subheading">Net Count, January-July 2021</h3>
-        <ResponsiveContainer minWidth={700} height={height}>
+        <ResponsiveContainer minWidth={700} minHeight={500}>
           <BarChart
             data={data}
             margin={{

@@ -19,7 +19,7 @@ export default class BubbleMap extends React.Component<any, BubbleMapState> {
     super(props);
 
     this.state = {
-      geoUrl: 'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json',
+      geoUrl: 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json',
       markerOffset: -5,
       markers: [
         { name: 'London', coordinates: [-0.118092, 51.509865], fulfilledPurchaseCount: 42 },
@@ -44,7 +44,7 @@ export default class BubbleMap extends React.Component<any, BubbleMapState> {
       <div className="main-panel" data-testid="BubbleMap">
         <h2 className="map-headers distribution-title">Order Delivery Volumes</h2>
         <h3 className="map-headers">Number of Orders Shipped per Month</h3>
-        <ComposableMap width={800} height={375}
+        <ComposableMap width={500} height={325}
         projection="geoAzimuthalEqualArea"
         projectionConfig={{
           rotate: [-20.0, -52.0, 0],
@@ -52,7 +52,7 @@ export default class BubbleMap extends React.Component<any, BubbleMapState> {
         }}>
           <Geographies geography={this.state.geoUrl}>
             {({ geographies }) =>
-              geographies.map(geo => <Geography key={geo.rsmKey} geography={geo} />)
+              geographies.map(geo => <Geography key={geo.rsmKey} geography={geo}/>)
             }
           </Geographies>
           {this.state.markers.map(({ name, coordinates, fulfilledPurchaseCount }) => (

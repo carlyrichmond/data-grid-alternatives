@@ -3,7 +3,7 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import DarkUnica from 'highcharts/themes/dark-unica'
 import { BaseChartProps, HighchartsChartState } from '../../models/CommonChartModels';
-import { generateProductData } from '../../models/CustomerDataGenerator';
+import { generateProductData } from '../../models/DataGenerator';
 import { ProductCounts } from '../../models/CustomerModel';
 import './StackedProductBarChart.css';
 

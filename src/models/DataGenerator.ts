@@ -55,3 +55,20 @@ export function generateProductData(): ProductCounts[] {
       };
     });
   }
+
+export function getTimeSeriesData(startDate: Date, endDate: Date, minutesIncrement?: number): number[][] {
+    const MILLISECONDS_IN_DAY = 86400000;
+    const milliseconds = minutesIncrement ? minutesIncrement * 60000: MILLISECONDS_IN_DAY;
+
+    const data: number[][] = [];
+    let currentDateInMilliseconds: number = startDate.getTime();
+    const endDateInMilliseconds: number = endDate.getTime();
+
+    while (currentDateInMilliseconds <= endDateInMilliseconds) {
+      const currentPosition: number = +(Math.random() * (180 - 165) + 165).toFixed(2);
+      data.push([currentDateInMilliseconds, currentPosition]);
+      currentDateInMilliseconds += milliseconds;
+    }
+
+    return data;
+}
