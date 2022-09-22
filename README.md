@@ -78,6 +78,8 @@ Here are some additional resources to help you learn more on your visualisation 
 
 # Focus Research
 
+The idea of information overload and focus is a difficult one to prove. We often anecdotally feel that our attention spans are getting shorter. But from research it's tricky to prove. Check out some resources discussing focus, and be mindful of your own focus and wellbeing.
+
 1. [Stolen Focus by Johann Hari](https://stolenfocusbook.com/)
 2. [Accelerating dynamics of collective attention](https://www.nature.com/articles/s41467-019-09311-w)
 3. [Can we trust the people who got us hooked on the internet to save us from it?](https://www.vox.com/the-goods/2019/4/25/18515981/google-tristan-harris-attention-economy-silicon-valley)
@@ -86,6 +88,8 @@ Here are some additional resources to help you learn more on your visualisation 
 6. [Shot & Chaser: #111 Are our attention spans getting shorter?](https://open.spotify.com/episode/6oxgbLRHLHYmGWTrheqPFm?si=832342961f78471e)
 
 ### Inspiration
+
+There are so many amazing resources out there to inspire your own visualisations. Here are some of my favourites!
 
 1. [D3 Graph Gallery](https://d3-graph-gallery.com)
 2. [Data Sketches by Nadieh Bremer and Shirley Wu](https://www.datasketch.es/)
