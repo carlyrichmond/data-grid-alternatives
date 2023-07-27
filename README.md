@@ -96,6 +96,15 @@ There are so many amazing resources out there to inspire your own visualisations
 2. [Data Sketches by Nadieh Bremer and Shirley Wu](https://www.datasketch.es/)
 3. [Information is Beautiful by David McCandless](https://informationisbeautiful.net/)
 
+### Design Best Practices
+
+1. [UX Collective](https://uxdesign.cc/)
+2. [Don't Make Me Think: Revisited by Steve Krug](https://www.amazon.co.uk/Dont-Make-Think-Revisited-Usability/dp/0321965515)
+3. [The Design of Everyday Things by Don Norman](https://www.amazon.co.uk/Design-Everyday-Things-MIT-Press/dp/0262525674)
+4. [Nielsen Norman Group Articles](https://www.nngroup.com/articles/)
+5. [Laws of UX](https://lawsofux.com/)
+6. [WCAG Color Contrast Checker | Accessible Web](https://accessibleweb.com/color-contrast-checker/)
+
 ### Libraries
 
 If you are looking to get started or learn more about data visualisation best practices, do check out the below resources. Not all libraries have been used within the examples in this repo, but are presented to give you options for a variety of use cases and organisations.
